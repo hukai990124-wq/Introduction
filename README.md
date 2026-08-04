@@ -4,37 +4,36 @@
 <body>
     <header>
         <h1>Welcome!</h1>
-
-        <p>
+<p>
             My name is HuKai. I am currently learning coding and web development.
             I hope you can give me some valuable advice!
         </p>
     </header>
 
-    <main>
+<main>
         <section>
             <h2>About Me</h2>
 
-            <p>
+ <p>
                 I majored in sociology, which means I had never studied anything
                 related to computers before. However, I am willing to give it a try.
             </p>
         </section>
 
-        <section>
+<section>
             <h2>My Goal</h2>
 
-            <p>
+<p>
                 My goal is to complete some projects on my own.
             </p>
         </section>
 
-        <section>
+<section>
             <h2>Project Direction</h2>
 
-            <h3>Step One</h3>
+<h3>Step One</h3>
 
-            <p>
+<p>
                 Perhaps I will create some simple game models as my first attempt.
             </p>
                <h3>Step Two</h3>
@@ -47,7 +46,7 @@
                </p> 
         </section>
           
-          <section>
+<section>
                <h2>My Information</h2>
                <p>
                <strong>Name:</strong>Hu Kai<br>
@@ -60,7 +59,7 @@
            </section>
     </main>
 
-     <footer>
+<footer>
                 <br>
                 <hr>
                 <br>
