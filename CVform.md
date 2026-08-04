@@ -9,6 +9,6 @@
 
 <body>
     <header>
-        <h11 style="text-align: center;">Curriculum Vitae</h1>
+        <h1 style="text-align: center;">Curriculum Vitae</h1>
         <h2>Hu Kai</h2>
     </header>
