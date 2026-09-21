@@ -52,7 +52,7 @@
                <strong>Name:</strong>Hu Kai<br>
                <strong>Major:</strong>Sociology in Global Diversity Studies<br>
                <strong>Education:</strong>Bachelor of Sociology(Toyo University)<br>
-               <strong>Languages:</strong>Chinese(Native),Japanese(Professional),English(Intermediate)<br>
+               <strong>Languages:</strong>Chinese(Native),Japanese(Professional),English(Intermediate)，Spainsh(Beginner)<br>
                <strong>Nationality:</strong>China
                <strong>Location:</strong> Tokyo, Japan<br>
                </p>
