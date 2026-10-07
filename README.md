@@ -1,69 +1,30 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>HuKai's Personal Website</title> </head>
-<body>
-    <header>
-        <h1>Welcome!</h1>
-<p>
-            My name is HuKai. I am currently learning coding and web development.
-            I hope you can give me some valuable advice!
-        </p>
-    </header>
+# Introduction
 
-<main>
-        <section>
-            <h2>About Me</h2>
+My personal website — a short introduction about me, plus my CV.
 
- <p>
-                I majored in sociology, which means I had never studied anything
-                related to computers before. However, I am willing to give it a try.
-            </p>
-        </section>
+## Pages
 
-<section>
-            <h2>My Goal</h2>
+| Page | What it is |
+| --- | --- |
+| `index.html` | Home page — who I am, my goals and direction |
+| `myCV.html` | Curriculum Vitae |
 
-<p>
-                My goal is to complete some projects on my own.
-            </p>
-        </section>
+## Files
 
-<section>
-            <h2>Project Direction</h2>
+| Path | Description |
+| --- | --- |
+| `index.html` | Home page |
+| `myCV.html` | CV page |
+| `home.css` | Styles for the home page |
+| `CVstyle.css` | Styles for the CV page |
+| `assets/me.png` | Profile photo |
+| `assets/imperium-stamp-100.png` | Stamp |
+| `assets/background-comissioner.png` | Page background |
 
-<h3>Step One</h3>
+## Preview locally
 
-<p>
-                Perhaps I will create some simple game models as my first attempt.
-            </p>
-               <h3>Step Two</h3>
-               <p>
-                    Strengthen my foundational skills and my English writing skills.
-               </p>
-               <h3>Step Three</h3>
-               <p>
-                    Create some project independently.
-               </p> 
-        </section>
-          
-<section>
-               <h2>My Information</h2>
-               <p>
-               <strong>Name:</strong>Hu Kai<br>
-               <strong>Major:</strong>Sociology in Global Diversity Studies<br>
-               <strong>Education:</strong>Bachelor of Sociology(Toyo University)<br>
-               <strong>Languages:</strong>Chinese(Native),Japanese(Professional),English(Intermediate)，Spainsh(Beginner)<br>
-               <strong>Nationality:</strong>China
-               <strong>Location:</strong> Tokyo, Japan<br>
-               </p>
-           </section>
-    </main>
+Just open `index.html` in a browser. There is no build step — it is plain HTML and CSS.
 
-<footer>
-                <br>
-                <hr>
-                <br>
-              <p>© 2026 HuKai. All rights reserved.</p>
-     </footer>
-</body>
-</html>
+---
+
+&copy; 2026 Hu Kai
