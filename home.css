@@ -43,6 +43,10 @@ footer {
 
 .cta {
     margin: 24px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
 }
 
 .cta a {
@@ -59,6 +63,12 @@ footer {
 .cta a:hover {
     background: #fff;
     color: #111;
+}
+
+@media (max-width: 420px) {
+    .cta a {
+        flex: 1 1 100%;
+    }
 }
 
 main {

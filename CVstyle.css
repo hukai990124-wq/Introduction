@@ -30,6 +30,7 @@ body {
 
 .personal-info {
     flex: 1;
+    min-width: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     border-top: 1px solid black;
@@ -79,6 +80,7 @@ body {
     margin: 0;
     padding: 16px;
     line-height: 1.7;
+    overflow-wrap: anywhere;
 }
 
 .education-stamp {
@@ -128,4 +130,26 @@ body {
 footer {
     margin-top: 30px;
     text-align: center;
+}
+
+.motto {
+    margin: 0.67em 0;
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: -4px -4px 8px gold;
+}
+
+@media (max-width: 520px) {
+    .personal-info {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-photo {
+        width: 130px;
+        flex-shrink: 0;
+    }
+
+    .education-stamp {
+        grid-template-columns: 1fr 120px;
+    }
 }

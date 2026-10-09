@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hu Kai - Personal Website</title>
+<title data-i18n="home.title">Hu Kai - Personal Website</title>
 <link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="language.css">
+<script src="language.js" defer></script>
 <style>
     body {
         background-image:
@@ -19,62 +21,72 @@
 
 <body>
 
+<nav class="language-switcher" aria-label="Language" hidden>
+    <button type="button" data-language="en" lang="en" aria-pressed="true">English</button>
+    <button type="button" data-language="zh" lang="zh-CN" aria-pressed="false">中文</button>
+    <button type="button" data-language="ja" lang="ja" aria-pressed="false">日本語</button>
+</nav>
+
 <header class="hero">
     <h1>Hu Kai</h1>
-    <p class="lead">
+    <p class="lead" data-i18n="home.welcome">
         Welcome! I am currently learning coding and web development.
         I hope you can give me some valuable advice.
     </p>
-    <p class="cta"><a href="myCV.html">View my CV &rarr;</a></p>
+    <div class="cta">
+        <a href="myCV.html" data-language-link data-i18n="home.cv">View my CV &rarr;</a>
+        <a href="https://www.nexusmods.com/profile/Hukai19990124" target="_blank" rel="noopener noreferrer" lang="en">My Mods</a>
+        <a href="https://github.com/hukai990124-wq" target="_blank" rel="noopener noreferrer" lang="en">My Github</a>
+    </div>
 </header>
 
 <main>
 
     <section class="card">
-        <h2>About Me</h2>
-        <p>
+        <h2 data-i18n="home.about">About Me</h2>
+        <p data-i18n="home.aboutBody">
             I majored in sociology, which means I had never studied anything
             related to computers before. However, I am willing to give it a try.
         </p>
     </section>
 
     <section class="card">
-        <h2>My Goal</h2>
-        <p>My goal is to complete some projects on my own.</p>
+        <h2 data-i18n="home.goal">My Goal</h2>
+        <p data-i18n="home.goalBody">My goal is to complete some projects on my own.</p>
     </section>
 
     <section class="card">
-        <h2>Project Direction</h2>
-        <h3>Step One</h3>
-        <p>Perhaps I will create some simple game models as my first attempt.</p>
-        <h3>Step Two</h3>
-        <p>Strengthen my foundational skills and my English writing skills.</p>
-        <h3>Step Three</h3>
-        <p>Create some project independently.</p>
+        <h2 data-i18n="home.direction">Project Direction</h2>
+        <h3 data-i18n="home.stepOne">Step One</h3>
+        <p data-i18n="home.stepOneBody">Perhaps I will create some simple game models as my first attempt.</p>
+        <h3 data-i18n="home.stepTwo">Step Two</h3>
+        <p data-i18n="home.stepTwoBody">Strengthen my foundational skills and my English writing skills.</p>
+        <h3 data-i18n="home.stepThree">Step Three</h3>
+        <p data-i18n="home.stepThreeBody">Create some project independently.</p>
     </section>
 
     <section class="card">
-        <h2>My Information</h2>
+        <h2 data-i18n="home.information">My Information</h2>
         <dl>
-            <dt>Name</dt>
+            <dt data-i18n="home.name">Name</dt>
             <dd>Hu Kai</dd>
-            <dt>Major</dt>
-            <dd>Sociology in Global Diversity Studies</dd>
-            <dt>Education</dt>
-            <dd>Bachelor of Sociology (Toyo University)</dd>
-            <dt>Languages</dt>
-            <dd>Chinese (Native), Japanese (Professional), English (Intermediate), Spanish (Beginner)</dd>
-            <dt>Nationality</dt>
-            <dd>China</dd>
-            <dt>Location</dt>
-            <dd>Tokyo, Japan</dd>
+            <dt data-i18n="home.major">Major</dt>
+            <dd data-i18n="home.majorValue">Sociology in Global Diversity Studies</dd>
+            <dt data-i18n="education.label">Education</dt>
+            <dd data-i18n="home.educationValue">Bachelor of Sociology (Toyo University)</dd>
+            <dt data-i18n="home.languages">Languages</dt>
+            <dd data-i18n="home.languagesValue">Chinese (Native), Japanese (Professional), English (Intermediate), Spanish (Beginner)</dd>
+            <dt data-i18n="home.nationality">Nationality</dt>
+            <dd data-i18n="home.nationalityValue">China</dd>
+            <dt data-i18n="home.location">Location</dt>
+            <dd data-i18n="home.locationValue">Tokyo, Japan</dd>
         </dl>
     </section>
 
 </main>
 
 <footer>
-    <p>&copy; 2026 Hu Kai. All rights reserved.</p>
+    <p data-i18n="home.copyright">&copy; 2026 Hu Kai. All rights reserved.</p>
 </footer>
 
 </body>
