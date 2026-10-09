@@ -16,6 +16,17 @@ quiet background volume. The bottom-right player provides play/pause and mute;
 the mute setting is remembered. If a browser blocks autoplay, click Play. Music
 stops when leaving the CV. No external recordings or audio services are used.
 
+The CV heading and Emperor motto use the self-hosted **UnifrakturCook** blackletter
+font. Chinese and Japanese glyphs fall back to readable serif fonts. The font is
+from [Google Fonts](https://github.com/google/fonts/tree/main/ofl/unifrakturcook)
+and includes its SIL Open Font License in `assets/fonts/OFL.txt`.
+
+The Imperial seal starts hidden on each page load. Click **Stamp / 盖章 / 押印**
+to reveal it with a brief stamping animation and an original synthesized wooden
+impact sound. Clicking again repeats the effect. Reduced-motion preferences skip
+the animation; the music player's mute setting also silences the stamp. Stamping
+does not resume paused background music, and audio failures do not hide the seal.
+
 ## Pages
 
 | Page | What it is |
@@ -35,6 +46,8 @@ stops when leaving the CV. No external recordings or audio services are used.
 | `language.css` | Language selector and keyboard focus styles |
 | `organ-hymn.js` | Original organ score, pipe synthesis and cathedral-style reverb |
 | `cv-music.js` | CV music playback, mute preference and localized controls |
+| `cv-stamp.js` | Click-to-stamp interaction and original impact sound |
+| `assets/fonts/` | Self-hosted UnifrakturCook font and its license |
 | `assets/me.png` | Profile photo |
 | `assets/imperium-stamp-100.png` | Stamp |
 | `assets/background-comissioner.png` | Page background |
@@ -46,10 +59,11 @@ There is no build step — it is plain HTML, CSS and JavaScript.
 
 ## Playback regression tests
 
-With Node.js installed, run `node --test tests/cv-music.test.cjs`. These tests
+With Node.js installed, run `node --test tests/*.test.cjs`. These tests
 cover blocked autoplay, pause/resume, mute persistence, language changes,
-back-cache navigation, blocked storage and unavailable audio. Also verify the
-actual synthesized sound and responsive player in a browser.
+back-cache navigation, blocked storage, unavailable audio, stamping, reduced
+motion and sound cleanup. Also verify the actual synthesized sounds, font and
+responsive controls in a browser.
 
 ---
 

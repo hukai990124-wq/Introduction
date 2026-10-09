@@ -6,9 +6,11 @@
     <title data-i18n="cv.title">Hu Kai - Curriculum Vitae</title>
     <link rel="stylesheet" href="CVstyle.css">
     <link rel="stylesheet" href="language.css">
+    <link rel="preload" href="assets/fonts/UnifrakturCook-Bold.ttf" as="font" type="font/ttf" crossorigin>
     <script src="language.js" defer></script>
     <script src="organ-hymn.js" defer></script>
     <script src="cv-music.js" defer></script>
+    <script src="cv-stamp.js" defer></script>
     <style>
         body {
             background-image:
@@ -28,7 +30,7 @@
         <button type="button" data-language="ja" lang="ja" aria-pressed="false">日本語</button>
     </nav>
     <header>
-        <h1 style="text-align: center;text-shadow: 0 4px 8px gold;font-size: 48px;" data-i18n="cv.heading">Curriculum Vitae</h1>
+        <h1 class="cv-heading" data-i18n="cv.heading">Curriculum Vitae</h1>
         <h2 class="section-title" data-i18n="cv.personal">Personal Information</h2>
 
 <div class="personal-area">
@@ -68,7 +70,10 @@
     </div>
 
     <div class="stamp-box">
-        <img src="assets/imperium-stamp-100.png" alt="Imperium stamp" data-i18n-alt="cv.stampAlt">
+        <div class="stamp-stage">
+            <img id="imperial-stamp" class="stamp-image" src="assets/imperium-stamp-100.png" alt="Imperium stamp" data-i18n-alt="cv.stampAlt" hidden>
+        </div>
+        <button class="stamp-button" type="button" aria-controls="imperial-stamp" aria-expanded="false" data-i18n="cv.stampButton" hidden>Stamp</button>
     </div>
 </section>
 <footer><hr>
