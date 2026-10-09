@@ -33,10 +33,11 @@
         muteButton.setAttribute("aria-label", muted ? text.unmute : text.mute);
         muteButton.title = muted ? text.unmute : text.mute;
         muteButton.setAttribute("aria-pressed", String(muted));
-        playButton.querySelector(".icon-play").hidden = playing;
-        playButton.querySelector(".icon-pause").hidden = !playing;
-        muteButton.querySelector(".icon-sound").hidden = muted;
-        muteButton.querySelector(".icon-muted").hidden = !muted;
+        // SVG does not reflect the HTMLElement hidden property; update attributes.
+        playButton.querySelector(".icon-play").toggleAttribute("hidden", playing);
+        playButton.querySelector(".icon-pause").toggleAttribute("hidden", !playing);
+        muteButton.querySelector(".icon-sound").toggleAttribute("hidden", muted);
+        muteButton.querySelector(".icon-muted").toggleAttribute("hidden", !muted);
         playButton.disabled = failed;
         muteButton.disabled = failed;
         let state = "ready";

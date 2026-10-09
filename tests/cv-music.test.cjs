@@ -14,6 +14,10 @@ function setup({ blocked = false, stored = null, storageDenied = false, renderFa
             attributes: {}, events: {}, hidden: false,
             querySelector: element,
             setAttribute(name, value) { this.attributes[name] = value; },
+            toggleAttribute(name, force) {
+                if (force) this.attributes[name] = '';
+                else delete this.attributes[name];
+            },
             addEventListener(name, callback) { this.events[name] = callback; }
         });
         return elements.get(selector);
@@ -103,6 +107,18 @@ test('language changes update accessible names and playback status', async () =>
     page.changeLanguage('ja'); page.click('.music-mute');
     assert.equal(page.status(), 'ミュート中');
     assert.equal(page.element('.music-mute').attributes['aria-label'], 'ミュート解除');
+});
+
+test('SVG icon hidden attributes follow playing, paused and muted states', async () => {
+    const page = setup(); await flush();
+    assert.equal(Object.hasOwn(page.element('.icon-play').attributes, 'hidden'), true);
+    assert.equal(Object.hasOwn(page.element('.icon-pause').attributes, 'hidden'), false);
+    page.click('.music-mute');
+    assert.equal(Object.hasOwn(page.element('.icon-sound').attributes, 'hidden'), true);
+    assert.equal(Object.hasOwn(page.element('.icon-muted').attributes, 'hidden'), false);
+    page.click('.music-play'); await flush();
+    assert.equal(Object.hasOwn(page.element('.icon-play').attributes, 'hidden'), false);
+    assert.equal(Object.hasOwn(page.element('.icon-pause').attributes, 'hidden'), true);
 });
 
 test('navigation suspends music; back-cache restores only previously playing music', async () => {
