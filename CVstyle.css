@@ -149,6 +149,11 @@ body {
     color: #111;
 }
 
+.stamp-image:focus-visible {
+    outline: 3px solid #111;
+    outline-offset: 3px;
+}
+
 .stamp-box [hidden] {
     display: none;
 }

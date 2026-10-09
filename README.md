@@ -23,7 +23,8 @@ and includes its SIL Open Font License in `assets/fonts/OFL.txt`.
 
 The Imperial seal starts hidden on each page load. Click **Stamp / 盖章 / 押印**
 to reveal it with a brief stamping animation and an original synthesized wooden
-impact sound. Clicking again repeats the effect. Reduced-motion preferences skip
+impact sound. The button disappears after one stamp; reloading the page restores
+the button and hides the seal. Reduced-motion preferences skip
 the animation; the music player's mute setting also silences the stamp. Stamping
 does not resume paused background music, and audio failures do not hide the seal.
 

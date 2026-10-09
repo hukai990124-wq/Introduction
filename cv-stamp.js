@@ -2,7 +2,6 @@
     const button = document.querySelector(".stamp-button");
     const image = document.querySelector(".stamp-image");
     const muteButton = document.querySelector(".music-mute");
-    let animation;
     let effectContext;
 
     function release(context) {
@@ -63,11 +62,14 @@
     }
 
     button.addEventListener("click", () => {
+        if (!image.hidden) return;
+        const wasFocused = document.activeElement === button;
         image.hidden = false;
         button.setAttribute("aria-expanded", "true");
-        if (animation) animation.cancel();
+        button.hidden = true;
+        if (wasFocused) image.focus({ preventScroll: true });
         if (image.animate && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-            animation = image.animate([
+            image.animate([
                 { opacity: 0, transform: "scale(1.45) rotate(-14deg)" },
                 { opacity: 1, transform: "scale(0.94) rotate(-8deg)", offset: 0.65 },
                 { opacity: 1, transform: "scale(1) rotate(-8deg)" }
