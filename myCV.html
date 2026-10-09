@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="CVstyle.css">
     <link rel="stylesheet" href="language.css">
     <script src="language.js" defer></script>
+    <script src="organ-hymn.js" defer></script>
+    <script src="cv-music.js" defer></script>
     <style>
         body {
             background-image:
@@ -19,7 +21,7 @@
     </style>
 </head>
 
-<body>
+<body class="cv-with-music">
     <nav class="language-switcher" aria-label="Language" hidden>
         <button type="button" data-language="en" lang="en" aria-pressed="true">English</button>
         <button type="button" data-language="zh" lang="zh-CN" aria-pressed="false">中文</button>
@@ -75,5 +77,19 @@
         <a href="index.html" data-language-link data-i18n="cv.back" style="display:inline-block;padding:9px 20px;border:1px solid #000;background:#111;color:#fff;text-decoration:none">&larr; Back to home</a>
     </p>
 </footer>
+<aside class="music-player" aria-label="Imperial hymn player" hidden>
+    <div class="music-caption">
+        <strong data-i18n="music.title">Imperial Hymn</strong>
+        <span class="music-status" role="status" aria-live="polite">Preparing music…</span>
+    </div>
+    <button class="music-play" type="button" aria-label="Play hymn" title="Play hymn">
+        <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+    </button>
+    <button class="music-mute" type="button" aria-label="Mute hymn" title="Mute hymn" aria-pressed="false">
+        <svg class="icon-sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9z"/><path d="M16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <svg class="icon-muted" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M3 9v6h4l5 4V5L7 9z"/><path d="m16 9 6 6m0-6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    </button>
+</aside>
 </body>
 </html>
