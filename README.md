@@ -16,7 +16,8 @@ quiet background volume. The bottom-right player provides play/pause and mute;
 the mute setting is remembered. If a browser blocks autoplay, click Play. Music
 stops when leaving the CV. No external recordings or audio services are used.
 
-The CV heading and Emperor motto use the self-hosted **UnifrakturCook** blackletter
+The home page's Hu Kai title, CV heading and Emperor motto use the self-hosted
+**UnifrakturCook** blackletter
 font. Chinese and Japanese glyphs fall back to readable serif fonts. The font is
 from [Google Fonts](https://github.com/google/fonts/tree/main/ofl/unifrakturcook)
 and includes its SIL Open Font License in `assets/fonts/OFL.txt`.
