@@ -52,6 +52,17 @@ body {
     border-bottom: 1px solid black;
 }
 
+.qualifications-list {
+    margin: 0;
+    padding: 16px 16px 0 36px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.qualifications-list li + li {
+    margin-top: 12px;
+}
+
 .profile-photo {
     width: 150px;
     display: flex;

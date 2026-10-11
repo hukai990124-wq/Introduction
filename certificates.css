@@ -1,0 +1,116 @@
+.certificates-page {
+    --certificate-ink: #111;
+    --certificate-muted: #444;
+    --certificate-paper: rgba(255, 255, 255, 0.96);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)), url("assets/background-comissioner.png");
+}
+
+.certificates-page .hero,
+.certificates-page main,
+.certificates-page footer {
+    width: 960px;
+    max-width: calc(100% - 32px);
+}
+
+.certificates-page .hero h1 {
+    font-family: "UnifrakturCook", "Songti SC", "Yu Mincho", serif;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.certificate-owner {
+    margin: 0 0 8px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.gallery-hint {
+    margin: 0 0 16px;
+    padding: 12px 16px;
+    background: var(--certificate-paper);
+    border: 1px solid var(--certificate-ink);
+    color: var(--certificate-muted);
+}
+
+.certificate-record {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+    margin-bottom: 24px;
+    border: 1px solid var(--certificate-ink);
+    background: var(--certificate-paper);
+}
+
+.certificate-details {
+    padding: 24px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.certificate-details h2 {
+    margin: 8px 0 16px;
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+.certificate-details p {
+    margin: 0 0 16px;
+}
+
+.certificate-category {
+    font-size: 0.85rem;
+    color: var(--certificate-muted);
+}
+
+.certificate-details dl {
+    padding: 0;
+    margin: 24px 0;
+    grid-template-columns: 1fr;
+    gap: 4px;
+}
+
+.certificate-details dt:not(:first-child) {
+    margin-top: 12px;
+}
+
+.certificate-open {
+    display: inline-block;
+    padding: 8px 0;
+    color: var(--certificate-ink);
+    text-underline-offset: 4px;
+}
+
+.certificate-image-link {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background: #fff;
+    border-left: 1px solid var(--certificate-ink);
+}
+
+.certificate-image-link img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.certificates-page a:focus-visible {
+    outline: 3px solid var(--certificate-ink);
+    outline-offset: 4px;
+}
+
+@media (max-width: 640px) {
+    .certificate-record {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-details {
+        padding: 20px;
+    }
+
+    .certificate-image-link {
+        border-left: none;
+        border-top: 1px solid var(--certificate-ink);
+        padding: 12px;
+    }
+}
