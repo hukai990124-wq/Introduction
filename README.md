@@ -22,6 +22,7 @@ The browser loads native ES modules compiled from strict TypeScript. The runtime
 | scripts/build.mjs | Compile TypeScript and prepare the complete static dist/ |
 | scripts/preview.mjs | Local static preview server |
 | assets/certificates/ | Eight full certificate scans |
+| assets/experience/ | Original photos for university work and study tour experiences |
 
 The four HTML files preserve complete content, original scan links and work profile links when JavaScript is unavailable. Previous root JavaScript/CSS files and their existing regression fixtures are retained as historical references; current pages load app/main.js and styles/site.css.
 
@@ -57,6 +58,12 @@ The L&R image is rendered from the supplied original digital PDF at 2600 pixels 
 ## TOEIC Speaking & Writing
 
 The certificate gallery and CV include the September 13, 2026 result: Speaking 120 / 200 and Writing 130 / 200. The full certificate page is rendered from the supplied PDF as assets/certificates/toeic-speaking-writing.jpg. Each component is presented separately.
+
+## Experience and achievements
+
+The certificates page is labeled Certificates & Achievements / 证书&成就 / 資格・実績. A separate experience section presents university hotel banquet service and restaurant assistant (Busboy) work from April 2022 to August 2025, and a September 2023 Papua New Guinea Study Tour with a group visit to JICA for learning and exchange. Both entries use the user's original photographs with their full proportions preserved. These experience entries are separate from the eight-certificate gallery and its filters and viewer.
+
+The English JICA name follows its [official organization profile](https://www.jica.go.jp/english/about/basic/jica/). Dates and participation descriptions are supplied by the user; no employer or additional duties are inferred.
 
 ## Certificate labels
 
