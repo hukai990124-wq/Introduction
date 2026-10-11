@@ -1,0 +1,14 @@
+{
+  "name": "hu-kai-personal-site",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "preview": "node scripts/preview.mjs",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2"
+  }
+}
