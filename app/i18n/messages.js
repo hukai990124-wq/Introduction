@@ -131,6 +131,11 @@ const english = {
     "works.modsDescription": "Explore my Nexus Mods profile and game modifications.",
     "works.quizCategory": "QUIZ & PRACTICE",
     "works.quizDescription": "Visit my Quizbank website for question practice and review.",
+    "cert.toeicSwName": "TOEIC Speaking & Writing",
+    "cert.speaking": "Speaking",
+    "cert.writing": "Writing",
+    "cert.toeicSwAlt": "Hu Kai's official TOEIC Speaking & Writing score certificate: Speaking 120 out of 200 and Writing 130 out of 200",
+    "cv.toeicSwResult": "Speaking 120 / 200 · Writing 130 / 200 · Test date: September 13, 2026",
     "site.backTop": "Back to top"
 };
 export const messages = {
@@ -268,6 +273,11 @@ export const messages = {
         "works.modsDescription": "浏览我的 Nexus Mods 主页与模组作品。",
         "works.quizCategory": "题库与练习",
         "works.quizDescription": "打开我的 Quizbank 网站，进行题库练习与复习。",
+        "cert.toeicSwName": "TOEIC 口语与写作（S&W）",
+        "cert.speaking": "口语",
+        "cert.writing": "写作",
+        "cert.toeicSwAlt": "胡凯的 TOEIC 口语与写作官方成绩单：口语 120 / 200，写作 130 / 200",
+        "cv.toeicSwResult": "口语 120 / 200 · 写作 130 / 200 · 考试日期：2026 年 9 月 13 日",
         "site.backTop": "返回顶部"
     },
     ja: {
@@ -403,6 +413,11 @@ export const messages = {
         "works.modsDescription": "Nexus ModsのプロフィールとゲームMODをご覧いただけます。",
         "works.quizCategory": "問題集・練習",
         "works.quizDescription": "Quizbankサイトで問題練習と復習ができます。",
+        "cert.toeicSwName": "TOEIC スピーキング＆ライティング（S&W）",
+        "cert.speaking": "スピーキング",
+        "cert.writing": "ライティング",
+        "cert.toeicSwAlt": "胡凱のTOEIC Speaking & Writing公式認定証：スピーキング120 / 200、ライティング130 / 200",
+        "cv.toeicSwResult": "スピーキング120 / 200 · ライティング130 / 200 · 受験日：2026年9月13日",
         "site.backTop": "ページの先頭へ"
     }
 };
