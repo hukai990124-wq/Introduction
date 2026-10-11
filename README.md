@@ -54,7 +54,7 @@ The CV seal starts hidden. Stamp / 盖章 / 押印 reveals it with a brief anima
 
 Always run pnpm build before publishing and commit both TypeScript source and generated app/ modules.
 
-- Cloudflare: GitHub main is connected to Workers Builds. Root HTML, styles/, app/ and assets/ provide the complete static site using the existing deployment configuration.
+- Cloudflare: GitHub main is connected to Workers Builds. wrangler.jsonc identifies the existing hukaicv Worker. .assetsignore limits uploaded files to root HTML, styles/, app/ and assets/, excluding installed dependencies and development sources. The dashboard deploy command remains npx wrangler deploy; compiled app/ modules are committed before publishing.
 - OpenAI Sites: its managed source repository contains the same source and compiled site. .openai/hosting.json serves dist/; publish that directory as a new version of the existing public project.
 
 The self-hosted UnifrakturCook font includes its SIL Open Font License in assets/fonts/OFL.txt. Certificate dates and scores are transcribed from the original documents. Existing regression fixtures target the previous scripts; they do not establish coverage for the TypeScript implementation.

@@ -1,0 +1,11 @@
+# Publish the complete browser site and its assets.
+*
+!index.html
+!myCV.html
+!certificates.html
+!styles/
+!styles/**
+!app/
+!app/**
+!assets/
+!assets/**
