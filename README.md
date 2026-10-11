@@ -50,6 +50,10 @@ Each player has an explicit on/off button, mute and volume control. Mute and vol
 
 The CV seal starts hidden. Stamp / 盖章 / 押印 reveals it with a brief animation and synthesized wooden impact. The player mute also silences the stamp. Reduced motion skips the animation; stamping never resumes a paused soundtrack.
 
+## TOEIC Listening & Reading
+
+The L&R image is rendered from the supplied original digital PDF at 2600 pixels high, replacing the earlier scan at the same asset URL. The result remains total 800, Listening 460 and Reading 340, tested March 1, 2025. Japanese labels on the home summary, CV and gallery use リスニング＆リーディング（L&R）.
+
 ## TOEIC Speaking & Writing
 
 The certificate gallery and CV include the September 13, 2026 result: Speaking 120 / 200 and Writing 130 / 200. The full certificate page is rendered from the supplied PDF as assets/certificates/toeic-speaking-writing.jpg. Each component is presented separately.

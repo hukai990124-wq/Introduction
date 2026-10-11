@@ -136,6 +136,8 @@ const english = {
     "cert.writing": "Writing",
     "cert.toeicSwAlt": "Hu Kai's official TOEIC Speaking & Writing score certificate: Speaking 120 out of 200 and Writing 130 out of 200",
     "cv.toeicSwResult": "Speaking 120 / 200 · Writing 130 / 200 · Test date: September 13, 2026",
+    "cert.toeicLrName": "TOEIC Listening & Reading",
+    "cert.toeicLrType": "Listening & Reading",
     "site.backTop": "Back to top"
 };
 export const messages = {
@@ -153,7 +155,7 @@ export const messages = {
         "cert.listening": "听力",
         "cert.reading": "阅读",
         "cert.testDate": "考试日期",
-        "cert.toeicAlt": "胡凯的 TOEIC 官方成绩单：总分 800，听力 460，阅读 340",
+        "cert.toeicAlt": "胡凯的 TOEIC 听力与阅读（L&R）官方成绩单：总分 800，听力 460，阅读 340",
         "cv.toeicResult": "听力 460 · 阅读 340 · 考试日期：2025 年 3 月 1 日",
         "cert.fpName": "金融规划师 3 级（FP）",
         "cert.fpIssuer": "金融财政事务研究会（KINZAI）/ 日本金融规划师协会（JAFP）",
@@ -278,6 +280,8 @@ export const messages = {
         "cert.writing": "写作",
         "cert.toeicSwAlt": "胡凯的 TOEIC 口语与写作官方成绩单：口语 120 / 200，写作 130 / 200",
         "cv.toeicSwResult": "口语 120 / 200 · 写作 130 / 200 · 考试日期：2026 年 9 月 13 日",
+        "cert.toeicLrName": "TOEIC 听力与阅读（L&R）",
+        "cert.toeicLrType": "听力与阅读（L&R）",
         "site.backTop": "返回顶部"
     },
     ja: {
@@ -293,7 +297,7 @@ export const messages = {
         "cert.listening": "リスニング",
         "cert.reading": "リーディング",
         "cert.testDate": "受験日",
-        "cert.toeicAlt": "胡凱のTOEIC公式認定証：合計800、リスニング460、リーディング340",
+        "cert.toeicAlt": "胡凱のTOEICリスニング＆リーディング（L&R）公式認定証：合計800、リスニング460、リーディング340",
         "cv.toeicResult": "リスニング460 · リーディング340 · 受験日：2025年3月1日",
         "cert.fpName": "3級ファイナンシャル・プランニング技能士",
         "cert.fpIssuer": "金融財政事情研究会 / 日本ファイナンシャル・プランナーズ協会",
@@ -418,6 +422,8 @@ export const messages = {
         "cert.writing": "ライティング",
         "cert.toeicSwAlt": "胡凱のTOEIC Speaking & Writing公式認定証：スピーキング120 / 200、ライティング130 / 200",
         "cv.toeicSwResult": "スピーキング120 / 200 · ライティング130 / 200 · 受験日：2026年9月13日",
+        "cert.toeicLrName": "TOEIC リスニング＆リーディング（L&R）",
+        "cert.toeicLrType": "リスニング＆リーディング（L&R）",
         "site.backTop": "ページの先頭へ"
     }
 };
