@@ -121,6 +121,13 @@ const english = {
     "audio.description": "Marching boots, drums, brass and distant engines",
     "audio.hymnDescription": "Original synthesized organ hymn",
     "cv.kicker": "PERSONNEL DOSSIER",
+    "works.title": "Hu Kai - MyWorks",
+    "works.kicker": "WORKS DIRECTORY",
+    "works.intro": "Find my source code and projects on GitHub, and my game modifications on Nexus Mods.",
+    "works.githubCategory": "SOURCE & PROJECTS",
+    "works.githubDescription": "Browse my repositories, source code and project updates.",
+    "works.modsCategory": "GAME MODIFICATIONS",
+    "works.modsDescription": "Explore my Nexus Mods profile and game modifications.",
     "site.backTop": "Back to top"
 };
 export const messages = {
@@ -248,6 +255,13 @@ export const messages = {
         "audio.description": "行军脚步、军鼓、铜管与远处引擎",
         "audio.hymnDescription": "原创管风琴合成圣歌",
         "cv.kicker": "个人履历档案",
+        "works.title": "Hu Kai - MyWorks",
+        "works.kicker": "作品目录",
+        "works.intro": "这里汇总我的作品入口：在 GitHub 查看源码与项目，在 Nexus Mods 查看模组作品。",
+        "works.githubCategory": "源码与项目",
+        "works.githubDescription": "浏览我的 GitHub 仓库、源码与项目更新。",
+        "works.modsCategory": "游戏模组",
+        "works.modsDescription": "浏览我的 Nexus Mods 主页与模组作品。",
         "site.backTop": "返回顶部"
     },
     ja: {
@@ -373,6 +387,13 @@ export const messages = {
         "audio.description": "行軍の足音、軍鼓、金管と遠くのエンジン",
         "audio.hymnDescription": "オリジナルの合成パイプオルガン聖歌",
         "cv.kicker": "個人履歴アーカイブ",
+        "works.title": "Hu Kai - MyWorks",
+        "works.kicker": "作品ディレクトリ",
+        "works.intro": "GitHubのソースコードやプロジェクト、Nexus ModsのゲームMODへのリンクをまとめています。",
+        "works.githubCategory": "ソースコード・プロジェクト",
+        "works.githubDescription": "GitHubのリポジトリ、ソースコード、プロジェクトの更新をご覧いただけます。",
+        "works.modsCategory": "ゲームMOD",
+        "works.modsDescription": "Nexus ModsのプロフィールとゲームMODをご覧いただけます。",
         "site.backTop": "ページの先頭へ"
     }
 };

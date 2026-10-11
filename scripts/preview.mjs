@@ -9,7 +9,7 @@ http.createServer(async (request, response) => {
   try {
     const url = new URL(request.url ?? "/", "http://localhost");
     const relative = decodeURIComponent(url.pathname).replace(/^\/+/, "") || "index.html";
-    const allowed = /^(index\.html|myCV\.html|certificates\.html|(?:styles|app|assets)\/.+)$/;
+    const allowed = /^(index\.html|myCV\.html|certificates\.html|myWorks\.html|(?:styles|app|assets)\/.+)$/;
     const filename = path.resolve(root, relative);
     if (!allowed.test(relative) || !filename.startsWith(root) || !mime[path.extname(filename)]) {
       response.writeHead(404).end("Not found");

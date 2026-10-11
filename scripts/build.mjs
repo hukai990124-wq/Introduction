@@ -9,7 +9,7 @@ const compiled = spawnSync(process.execPath, [compiler, "--project", path.join(r
 if (compiled.status !== 0) process.exit(compiled.status ?? 1);
 const destination = path.join(root, "dist");
 mkdirSync(destination, { recursive: true });
-for (const entry of ["index.html", "myCV.html", "certificates.html", "styles", "app", "assets"]) {
+for (const entry of ["index.html", "myCV.html", "certificates.html", "myWorks.html", "styles", "app", "assets"]) {
   cpSync(path.join(root, entry), path.join(destination, entry), { recursive: true });
 }
 console.log("Built TypeScript modules and static website in dist/.");

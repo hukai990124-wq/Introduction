@@ -1,6 +1,6 @@
 # Hu Kai — Personal Archive
 
-A responsive personal website with a home page, CV and seven original certificate scans. Its visual style uses military green, muted gold, self-hosted blackletter type and the original Imperial artwork.
+A responsive personal website with a home page, CV, seven original certificate scans and a MyWorks directory. MyWorks provides MyGithub and MyMods buttons linking to my GitHub and Nexus Mods profiles. Its visual style uses military green, muted gold, self-hosted blackletter type and the original Imperial artwork.
 
 ## TypeScript structure
 
@@ -23,7 +23,7 @@ The browser loads native ES modules compiled from strict TypeScript. The runtime
 | scripts/preview.mjs | Local static preview server |
 | assets/certificates/ | Seven full certificate scans |
 
-The three HTML files preserve complete content and original scan links when JavaScript is unavailable. Previous root JavaScript/CSS files and their existing regression fixtures are retained as historical references; current pages load app/main.js and styles/site.css.
+The four HTML files preserve complete content, original scan links and work profile links when JavaScript is unavailable. Previous root JavaScript/CSS files and their existing regression fixtures are retained as historical references; current pages load app/main.js and styles/site.css.
 
 ## Develop
 
