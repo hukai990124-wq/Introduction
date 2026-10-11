@@ -1,52 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="cv.title">Hu Kai - Curriculum Vitae</title>
-    <link rel="stylesheet" href="CVstyle.css">
-    <link rel="stylesheet" href="language.css">
-    <link rel="preload" href="assets/fonts/UnifrakturCook-Bold.ttf" as="font" type="font/ttf" crossorigin>
-    <script src="language.js" defer></script>
-    <script src="organ-hymn.js" defer></script>
-    <script src="cv-music.js" defer></script>
-    <script src="cv-stamp.js" defer></script>
-    <style>
-        body {
-            background-image:
-                linear-gradient(
-                    rgba(255, 255, 255, 0.4),
-                    rgba(255, 255, 255, 0.4)
-                ),
-                url("assets/background-comissioner.png");
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101813">
+<meta name="description" content="Hu Kai's personal archive: sociology, cloud technology, qualifications and creative projects.">
+<title data-i18n="cv.title">Hu Kai - Curriculum Vitae</title>
+<link rel="preload" href="assets/fonts/UnifrakturCook-Bold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="styles/site.css">
+<script type="module" src="app/main.js"></script>
 </head>
+<body class="cv-page with-audio">
 
-<body class="cv-with-music">
-    <nav class="language-switcher" aria-label="Language" hidden>
-        <button type="button" data-language="en" lang="en" aria-pressed="true">English</button>
-        <button type="button" data-language="zh" lang="zh-CN" aria-pressed="false">中文</button>
-        <button type="button" data-language="ja" lang="ja" aria-pressed="false">日本語</button>
-    </nav>
-    <header>
-        <h1 class="cv-heading" data-i18n="cv.heading">Curriculum Vitae</h1>
-        <h2 class="section-title" data-i18n="cv.personal">Personal Information</h2>
-
-<div class="personal-area">
-    <div class="personal-info">
+<a class="skip-link" href="#main" data-i18n="site.skip">Skip to content</a>
+<div class="reading-progress" aria-hidden="true"></div>
+<div class="ambient" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+<header class="site-header" id="top">
+  <a class="brand" href="index.html" data-language-link aria-label="Hu Kai — Home"><span class="brand-monogram" aria-hidden="true">HK</span><span>Hu Kai<span class="brand-caption">PERSONAL ARCHIVE</span></span></a>
+  <nav class="main-navigation" aria-label="Main navigation" data-i18n-aria="nav.label">
+    <a href="index.html" data-language-link data-i18n="nav.home" >Home</a>
+    <a href="myCV.html" data-language-link data-i18n="nav.cv" aria-current="page">Curriculum Vitae</a>
+    <a href="certificates.html" data-language-link data-i18n="home.certificates" >Certificates &amp; Achievements</a>
+  </nav>
+  <nav class="language-switcher" aria-label="Language" data-i18n-aria="language.label" hidden>
+    <button type="button" data-language="en" lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-language="zh" lang="zh-CN" aria-pressed="false">中文</button>
+    <button type="button" data-language="ja" lang="ja" aria-pressed="false">日本語</button>
+  </nav>
+</header>
+<main id="main" class="site-main">
+  <header class="page-hero" data-reveal>
+    <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span><span data-i18n="cv.kicker">PERSONNEL DOSSIER</span><span class="archive-number">/ 002</span></p>
+    <h1 class="display-heading" data-i18n="cv.heading">Curriculum Vitae</h1>
+    <p class="hero-subtitle" data-i18n="home.subtitle">Sociology · Cloud · Creative Technology</p>
+  </header>
+  <section class="panel cv-personal" aria-labelledby="personal-heading" data-reveal>
+    <div><p class="certificate-category">HU KAI / 胡 凯</p><h2 id="personal-heading" data-i18n="cv.personal">Personal Information</h2><div class="personal-info">
         <p><strong data-i18n="cv.name">NAME:</strong> Hu Kai</p>
         <p><strong data-i18n="cv.gender">GENDER:</strong> <span data-i18n="cv.genderValue">Male</span></p>
         <p><strong data-i18n="cv.birthDate">BIRTH DATE:</strong> 1999/01/24</p>
         <p><strong data-i18n="cv.nationality">NATIONALITY:</strong> <span data-i18n="cv.nationalityValue">Chinese</span></p>
-    </div>
-
-    <div class="profile-photo">
-        <img src="assets/me.png" alt="Hu Kai">
-    </div>
-</div>
-    </header>
-<section class="cv-section">
+    </div></div>
+    <figure class="cv-photo tilt-surface"><img src="assets/me.png" alt="Hu Kai" decoding="async"><figcaption data-i18n="home.profile">Based in Tokyo, Japan</figcaption></figure>
+  </section>
+  <div class="cv-grid"><section class="panel cv-section " data-reveal>
     <h2 data-i18n="cv.selfPR">Self-PR</h2>
 
     <p data-i18n="cv.selfPRBody">
@@ -55,11 +52,11 @@
         learning and practical projects.
     </p>
 </section>
-<section class="cv-section">
+<section class="panel cv-section " data-reveal>
     <h2 data-i18n="cv.skills">Skills</h2>
     <p data-i18n="cv.skillsValue">Chinese,Japanese,English,Python,HTML,CSS,AdobePhotoShop,AdobePremierPro,SQL</p>
 </section>
-<section class="cv-section">
+<section class="panel cv-section qualification-panel" data-reveal>
     <h2 data-i18n="cv.qualifications">Qualifications</h2>
     <ul class="qualifications-list">
         <li><strong>AWS Certified Cloud Practitioner</strong><br><span data-i18n="cv.awsDates">Issued September 23, 2026 · Valid until September 23, 2029</span></li>
@@ -70,8 +67,8 @@
         <li><strong>JLPT N1</strong><br><span data-i18n="cv.n1Result">Passed · Test date: December 5, 2021</span></li>
     </ul>
     <p><a href="certificates.html" data-language-link data-i18n="home.certificates">Certificates &amp; Achievements</a></p>
-</section>
-    <section class="education-stamp">
+</section></div>
+  <section class="panel education-stamp" data-reveal>
     <div class="education">
         <h2 data-i18n="education.label">Education</h2>
         <p>
@@ -88,25 +85,26 @@
         <button class="stamp-button" type="button" aria-controls="imperial-stamp" aria-expanded="false" data-i18n="cv.stampButton" hidden>Stamp</button>
     </div>
 </section>
-<footer><hr>
-    <p class="motto" data-i18n="cv.motto">For The Emperor of Mankind!!!</p><hr>
-    <p style="text-align:center;margin:18px 0 0">
-        <a href="index.html" data-language-link data-i18n="cv.back" style="display:inline-block;padding:9px 20px;border:1px solid #000;background:#111;color:#fff;text-decoration:none">&larr; Back to home</a>
-    </p>
+  <div class="motto-band" data-reveal><span aria-hidden="true">✦</span><p class="motto" data-i18n="cv.motto">For The Emperor of Mankind!!!</p><span aria-hidden="true">✦</span></div>
+</main>
+
+<footer class="site-footer">
+  <p data-i18n="home.copyright">© 2026 Hu Kai. All rights reserved.</p>
+  <a href="#top" data-i18n="site.backTop">Back to top</a>
 </footer>
-<aside class="music-player" aria-label="Imperial hymn player" hidden>
-    <div class="music-caption">
-        <strong data-i18n="music.title">Imperial Hymn</strong>
-        <span class="music-status" role="status" aria-live="polite">Preparing music…</span>
-    </div>
-    <button class="music-play" type="button" aria-label="Play hymn" title="Play hymn">
-        <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-        <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
-    </button>
-    <button class="music-mute" type="button" aria-label="Mute hymn" title="Mute hymn" aria-pressed="false">
-        <svg class="icon-sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9z"/><path d="M16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-        <svg class="icon-muted" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M3 9v6h4l5 4V5L7 9z"/><path d="m16 9 6 6m0-6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-    </button>
+
+<aside class="audio-player" data-audio-track="hymn" data-audio-state="off" aria-labelledby="audio-title" hidden>
+  <div class="audio-identity">
+    <div class="audio-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div><strong id="audio-title" data-i18n="music.title">Imperial Hymn</strong>
+    <span class="audio-description" data-i18n="audio.hymnDescription">Original synthesized organ hymn</span>
+    <span class="audio-status" role="status" aria-live="polite">Sound off · click to begin</span></div>
+  </div>
+  <div class="audio-controls">
+    <button class="audio-toggle" type="button" aria-pressed="false">Enable sound</button>
+    <button class="music-mute" type="button" aria-pressed="false">Mute</button>
+    <label class="volume-control"><span data-i18n="audio.volume">Volume</span><input class="audio-volume" type="range" min="0" max="50" step="1" value="18"></label>
+  </div>
 </aside>
 </body>
 </html>

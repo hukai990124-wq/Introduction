@@ -1,72 +1,62 @@
-# Introduction
+# Hu Kai — Personal Archive
 
-My personal website — a short introduction about me, plus my CV.
+A responsive personal website with a home page, CV and seven original certificate scans. Its visual style uses military green, muted gold, self-hosted blackletter type and the original Imperial artwork.
 
-Both pages support English, Chinese and Japanese. Use the language buttons at the
-top of either page; the selection is remembered across reloads and navigation.
-English is the default. A `?lang=en`, `?lang=zh` or `?lang=ja` URL selects a
-language directly, and internal links retain it even if browser storage is blocked.
+## TypeScript structure
 
-The home page links to my [Nexus Mods profile](https://www.nexusmods.com/profile/Hukai19990124)
-and [GitHub profile](https://github.com/hukai990124-wq) beside the CV button.
+The browser loads native ES modules compiled from strict TypeScript. The runtime has no third-party JavaScript dependencies. TypeScript is pinned in package.json and pnpm-lock.yaml; Node.js 22 or newer is required for development.
 
-The CV page includes an original twelve-bar pipe-organ instrumental, **Imperial
-Hymn**, composed for this website and synthesized with Web Audio. It loops at a
-quiet background volume. The bottom-right player provides play/pause and mute;
-the mute setting is remembered. If a browser blocks autoplay, click Play. Music
-stops when leaving the CV. No external recordings or audio services are used.
-
-The home page's Hu Kai title, CV heading and Emperor motto use the self-hosted
-**UnifrakturCook** blackletter
-font. Chinese and Japanese glyphs fall back to readable serif fonts. The font is
-from [Google Fonts](https://github.com/google/fonts/tree/main/ofl/unifrakturcook)
-and includes its SIL Open Font License in `assets/fonts/OFL.txt`.
-
-The Imperial seal starts hidden on each page load. Click **Stamp / 盖章 / 押印**
-to reveal it with a brief stamping animation and an original synthesized wooden
-impact sound. The button disappears after one stamp; reloading the page restores
-the button and hides the seal. Reduced-motion preferences skip
-the animation; the music player's mute setting also silences the stamp. Stamping
-does not resume paused background music, and audio failures do not hide the seal.
-
-## Pages
-
-| Page | What it is |
+| Path | Responsibility |
 | --- | --- |
-| `index.html` | Home page — who I am, my goals and direction |
-| `myCV.html` | Curriculum Vitae |
+| src/main.ts | Shared page entry point |
+| src/i18n/ | Typed English, Chinese and Japanese messages and language selection |
+| src/features/motion.ts | Scroll reveals, reading progress and portrait tilt |
+| src/features/certificates.ts | Category filters and accessible certificate dialog |
+| src/features/stamp.ts | Imperial seal animation and original impact sound |
+| src/audio/player.ts | Playback controls, preferences and audio lifecycle |
+| src/audio/march.ts | Original synthesized marching soundscape |
+| src/audio/organ.ts | Original twelve-bar organ score and synthesis |
+| src/lib/ | Storage fallbacks and shared Web Audio helpers |
+| styles/site.css | Responsive layout, design tokens and motion preferences |
+| app/ | Compiled browser modules; committed for Cloudflare's static deployment |
+| scripts/build.mjs | Compile TypeScript and prepare the complete static dist/ |
+| scripts/preview.mjs | Local static preview server |
+| assets/certificates/ | Seven full certificate scans |
 
-## Files
+The three HTML files preserve complete content and original scan links when JavaScript is unavailable. Previous root JavaScript/CSS files and their existing regression fixtures are retained as historical references; current pages load app/main.js and styles/site.css.
 
-| Path | Description |
-| --- | --- |
-| `index.html` | Home page |
-| `myCV.html` | CV page |
-| `home.css` | Styles for the home page |
-| `CVstyle.css` | Styles for the CV page |
-| `language.js` | Translations and shared language switching |
-| `language.css` | Language selector and keyboard focus styles |
-| `organ-hymn.js` | Original organ score, pipe synthesis and cathedral-style reverb |
-| `cv-music.js` | CV music playback, mute preference and localized controls |
-| `cv-stamp.js` | Click-to-stamp interaction and original impact sound |
-| `assets/fonts/` | Self-hosted UnifrakturCook font and its license |
-| `assets/me.png` | Profile photo |
-| `assets/imperium-stamp-100.png` | Stamp |
-| `assets/background-comissioner.png` | Page background |
+## Develop
 
-## Preview locally
+~~~sh
+pnpm install --frozen-lockfile
+pnpm typecheck
+pnpm build
+pnpm preview
+~~~
 
-Just open `index.html` in a browser, or serve this folder with a local HTTP server.
-There is no build step — it is plain HTML, CSS and JavaScript.
+Open http://127.0.0.1:8765. After editing TypeScript, run pnpm build again or use pnpm watch while previewing. Native ES modules require an HTTP server. The compiler rejects type errors before emitting JavaScript. No runtime bundler or remote font/audio services are required.
 
-## Playback regression tests
+## Languages and motion
 
-With Node.js installed, run `node --test tests/*.test.cjs`. These tests
-cover blocked autoplay, pause/resume, mute persistence, language changes,
-back-cache navigation, blocked storage, unavailable audio, stamping, reduced
-motion and sound cleanup. Also verify the actual synthesized sounds, font and
-responsive controls in a browser.
+English is the default. ?lang=en, ?lang=zh or ?lang=ja selects a language directly. Language controls update content, image descriptions, accessible labels and internal links. The preference is remembered when browser storage is available; navigation retains the language when storage is blocked.
 
----
+Scroll reveals, portrait tilt, drifting embers and the audio visualizer honor prefers-reduced-motion. Keyboard users can skip navigation, operate category filters and close the certificate dialog with Escape. Arrow keys navigate scans; focus returns to the image or link that opened the dialog.
 
-&copy; 2026 Hu Kai
+## Original synthesized audio
+
+Both soundtracks start off. The certificate page offers Astra Militarum — Muster: a forty-second loop of alternating marching boots, military drums, original brass phrases and low engine rumble. The CV retains Imperial Hymn, the original twelve-bar pipe-organ instrumental. Audio is synthesized locally with Web Audio only after the visitor clicks Enable sound.
+
+Each player has an explicit on/off button, mute and volume control. Mute and volume preferences are stored independently for each track. Playback pauses while the page is hidden and stops when leaving it. Unsupported audio leaves the website usable and displays a localized status.
+
+The CV seal starts hidden. Stamp / 盖章 / 押印 reveals it with a brief animation and synthesized wooden impact. The player mute also silences the stamp. Reduced motion skips the animation; stamping never resumes a paused soundtrack.
+
+## Deployment
+
+Always run pnpm build before publishing and commit both TypeScript source and generated app/ modules.
+
+- Cloudflare: GitHub main is connected to Workers Builds. Root HTML, styles/, app/ and assets/ provide the complete static site using the existing deployment configuration.
+- OpenAI Sites: its managed source repository contains the same source and compiled site. .openai/hosting.json serves dist/; publish that directory as a new version of the existing public project.
+
+The self-hosted UnifrakturCook font includes its SIL Open Font License in assets/fonts/OFL.txt. Certificate dates and scores are transcribed from the original documents. Existing regression fixtures target the previous scripts; they do not establish coverage for the TypeScript implementation.
+
+© 2026 Hu Kai
