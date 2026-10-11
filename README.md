@@ -1,6 +1,6 @@
 # Hu Kai — Personal Archive
 
-A responsive personal website with a home page, CV, seven original certificate scans and a MyWorks directory. MyWorks provides MyGithub, MyMods and MyQuizSite buttons linking to my GitHub profile, Nexus Mods profile and Quizbank website. MyQuizSite currently uses https://quizbank.hukai990124.workers.dev/; update its link and displayed address in myWorks.html when a custom domain is available. Its visual style uses military green, muted gold, self-hosted blackletter type and the original Imperial artwork.
+A responsive personal website with a home page, CV, seven original certificate scans and a MyWorks directory. The directory label is MyWorks in English, 我的作品 in Chinese and 私の作品 in Japanese. MyWorks provides MyGithub, MyMods and MyQuizSite buttons linking to my GitHub profile, Nexus Mods profile and Quizbank website. MyQuizSite currently uses https://quizbank.hukai990124.workers.dev/; update its link and displayed address in myWorks.html when a custom domain is available. Its visual style uses military green, muted gold, self-hosted blackletter type and the original Imperial artwork.
 
 ## TypeScript structure
 
@@ -49,6 +49,10 @@ Both soundtracks start off. The certificate page offers Astra Militarum — Must
 Each player has an explicit on/off button, mute and volume control. Mute and volume preferences are stored independently for each track. Playback pauses while the page is hidden and stops when leaving it. Unsupported audio leaves the website usable and displays a localized status.
 
 The CV seal starts hidden. Stamp / 盖章 / 押印 reveals it with a brief animation and synthesized wooden impact. The player mute also silences the stamp. Reduced motion skips the animation; stamping never resumes a paused soundtrack.
+
+## Certificate labels
+
+The English FP3 label is FinancialPlanner Level3. Institution names are localized independently from the original certificate image: the English names follow [KINZAI's publication site](https://kinzai-online.jp/about-kinzai) and the [JAFP organization profile](https://www.jafp.or.jp/eng/about_JAFP/gene/); Chinese names are translated for readability, and Japanese retains the source institution names.
 
 ## Deployment
 
