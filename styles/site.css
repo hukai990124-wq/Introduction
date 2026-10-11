@@ -101,7 +101,7 @@ h3 { font-family: var(--serif); font-size: 1.2rem; }
 .button-primary:hover { background: var(--gold-bright); color: var(--ink); }
 .button-outline { color: var(--gold-bright); background: #10181350; }
 .button-outline:hover { background: #d3bb8115; }
-.works-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 28px; }
 .work-card { display: flex; flex-direction: column; align-items: flex-start; }
 .work-card-top { width: 100%; display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
 .work-symbol { color: var(--gold); font: 2.8rem monospace; line-height: 1; }

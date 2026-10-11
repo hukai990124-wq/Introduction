@@ -1,6 +1,6 @@
 # Hu Kai — Personal Archive
 
-A responsive personal website with a home page, CV, seven original certificate scans and a MyWorks directory. MyWorks provides MyGithub and MyMods buttons linking to my GitHub and Nexus Mods profiles. Its visual style uses military green, muted gold, self-hosted blackletter type and the original Imperial artwork.
+A responsive personal website with a home page, CV, seven original certificate scans and a MyWorks directory. MyWorks provides MyGithub, MyMods and MyQuizSite buttons linking to my GitHub profile, Nexus Mods profile and Quizbank website. MyQuizSite currently uses https://quizbank.hukai990124.workers.dev/; update its link and displayed address in myWorks.html when a custom domain is available. Its visual style uses military green, muted gold, self-hosted blackletter type and the original Imperial artwork.
 
 ## TypeScript structure
 

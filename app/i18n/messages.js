@@ -123,11 +123,13 @@ const english = {
     "cv.kicker": "PERSONNEL DOSSIER",
     "works.title": "Hu Kai - MyWorks",
     "works.kicker": "WORKS DIRECTORY",
-    "works.intro": "Find my source code and projects on GitHub, and my game modifications on Nexus Mods.",
+    "works.intro": "Explore my GitHub projects, Nexus Mods creations and Quizbank practice website.",
     "works.githubCategory": "SOURCE & PROJECTS",
     "works.githubDescription": "Browse my repositories, source code and project updates.",
     "works.modsCategory": "GAME MODIFICATIONS",
     "works.modsDescription": "Explore my Nexus Mods profile and game modifications.",
+    "works.quizCategory": "QUIZ & PRACTICE",
+    "works.quizDescription": "Visit my Quizbank website for question practice and review.",
     "site.backTop": "Back to top"
 };
 export const messages = {
@@ -257,11 +259,13 @@ export const messages = {
         "cv.kicker": "个人履历档案",
         "works.title": "Hu Kai - MyWorks",
         "works.kicker": "作品目录",
-        "works.intro": "这里汇总我的作品入口：在 GitHub 查看源码与项目，在 Nexus Mods 查看模组作品。",
+        "works.intro": "这里汇总我的 GitHub 项目、Nexus Mods 模组作品和 Quizbank 题库练习网站。",
         "works.githubCategory": "源码与项目",
         "works.githubDescription": "浏览我的 GitHub 仓库、源码与项目更新。",
         "works.modsCategory": "游戏模组",
         "works.modsDescription": "浏览我的 Nexus Mods 主页与模组作品。",
+        "works.quizCategory": "题库与练习",
+        "works.quizDescription": "打开我的 Quizbank 网站，进行题库练习与复习。",
         "site.backTop": "返回顶部"
     },
     ja: {
@@ -389,11 +393,13 @@ export const messages = {
         "cv.kicker": "個人履歴アーカイブ",
         "works.title": "Hu Kai - MyWorks",
         "works.kicker": "作品ディレクトリ",
-        "works.intro": "GitHubのソースコードやプロジェクト、Nexus ModsのゲームMODへのリンクをまとめています。",
+        "works.intro": "GitHubのプロジェクト、Nexus ModsのゲームMOD、Quizbankの問題練習サイトをまとめています。",
         "works.githubCategory": "ソースコード・プロジェクト",
         "works.githubDescription": "GitHubのリポジトリ、ソースコード、プロジェクトの更新をご覧いただけます。",
         "works.modsCategory": "ゲームMOD",
         "works.modsDescription": "Nexus ModsのプロフィールとゲームMODをご覧いただけます。",
+        "works.quizCategory": "問題集・練習",
+        "works.quizDescription": "Quizbankサイトで問題練習と復習ができます。",
         "site.backTop": "ページの先頭へ"
     }
 };
