@@ -61,7 +61,7 @@ The certificate gallery and CV include the September 13, 2026 result: Speaking 1
 
 ## Experience and achievements
 
-The certificates page is labeled Certificates & Achievements / 证书&成就 / 資格・実績. A separate experience section presents university hotel banquet service and restaurant assistant (Busboy) work from April 2022 to August 2025, and a September 2023 Papua New Guinea Study Tour with a group visit to JICA for learning and exchange. Both entries use the user's original photographs with their full proportions preserved. These experience entries are separate from the eight-certificate gallery and its filters and viewer.
+The certificates page is labeled Certificates & Achievements / 证书&成就 / 資格・実績. After the certificate gallery, a separate experience section presents university hotel banquet service and busboy work from April 2022 to August 2025, and a September 2023 Papua New Guinea Study Tour with a group visit to JICA for learning and exchange. Both entries use the user's original photographs with their full proportions preserved. These experience entries are separate from the eight-certificate gallery and its filters and viewer.
 
 The English JICA name follows its [official organization profile](https://www.jica.go.jp/english/about/basic/jica/). Dates and participation descriptions are supplied by the user; no employer or additional duties are inferred.
 

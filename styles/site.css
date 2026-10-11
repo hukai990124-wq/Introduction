@@ -181,7 +181,7 @@ h3 { font-family: var(--serif); font-size: 1.2rem; }
 .certificate-hero { max-width: 850px; }
 .certificate-summary { display: flex; gap: 20px; align-items: center; margin-top: 32px; font: .75rem monospace; letter-spacing: .1em; color: var(--gold); }
 .summary-rule { width: 60px; height: 1px; background: var(--line); }
-.experience-section > .section-heading { margin-top: 0; }
+.certificate-hero + .section-heading { margin-top: 0; }
 .experience-entry { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 340px); align-items: center; gap: 40px; margin-bottom: 24px; }
 .experience-copy { min-width: 0; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
