@@ -155,6 +155,13 @@ const english = {
     "experience.studyBody": "In September 2023, I joined a study tour in Papua New Guinea and visited JICA, the Japan International Cooperation Agency, with my group members for learning and exchange.",
     "experience.studyAlt": "Group photo from the study tour's visit to JICA",
     "experience.studyCaption": "Learning and exchange at JICA with my study tour group.",
+    "experience.copperCategory": "INTERNSHIP · GUANGDONG, CHINA",
+    "experience.copperTitle": "Copper Materials Retail Internship",
+    "experience.copperDate": "February 2024",
+    "experience.copperBody": "In February 2024, I interned at a copper raw materials retailer in Guangdong, China. I learned to use Microsoft Word and Excel, gained customer service experience, and developed practical cutting-machine operation skills.",
+    "experience.copperAlt": "Composite image of Hu Kai smiling in front of a copper materials rack",
+    "experience.copperCaption": "AI composite illustration made from two photos provided by me.",
+    "experience.openComposite": "View composite image ↗",
     "site.backTop": "Back to top"
 };
 export const messages = {
@@ -316,6 +323,13 @@ export const messages = {
         "experience.studyBody": "2023 年 9 月，参加巴布亚新几内亚实地考察（Study Tour）项目，并与组员们一同探访 JICA（日本国际协力机构／国際協力機構），进行学习交流。",
         "experience.studyAlt": "Study Tour 组员探访 JICA 时的合照",
         "experience.studyCaption": "与 Study Tour 组员一同在 JICA 学习交流的合照。",
+        "experience.copperCategory": "实习经历 · 中国广东",
+        "experience.copperTitle": "红铜原材料零售公司实习",
+        "experience.copperDate": "2024 年 2 月",
+        "experience.copperBody": "2024 年 2 月，在中国广东省的一家红铜原材料零售公司实习，学习 Microsoft Word、Excel 的使用，积累客户沟通与服务经验，并掌握切割机的操作技巧。",
+        "experience.copperAlt": "胡凯微笑站在红铜材料货架前的合成展示图",
+        "experience.copperCaption": "AI 合成展示图，根据本人提供的两张照片制作。",
+        "experience.openComposite": "查看合成图 ↗",
         "site.backTop": "返回顶部"
     },
     ja: {
@@ -475,6 +489,13 @@ export const messages = {
         "experience.studyBody": "2023 年 9 月、パプアニューギニアでの実地研修（Study Tour）に参加し、グループのメンバーとともに JICA（国際協力機構）を訪問して、学習・交流を行いました。",
         "experience.studyAlt": "スタディツアーのJICA訪問時の集合写真",
         "experience.studyCaption": "スタディツアーのメンバーとJICAで学習・交流。",
+        "experience.copperCategory": "インターンシップ · 中国・広東省",
+        "experience.copperTitle": "銅素材小売企業でのインターンシップ",
+        "experience.copperDate": "2024 年 2 月",
+        "experience.copperBody": "2024 年 2 月、中国・広東省の銅素材を扱う小売企業でインターンシップに参加しました。Microsoft Word・Excel の使い方を学び、顧客対応の経験を積むとともに、切断機の操作技術を習得しました。",
+        "experience.copperAlt": "銅素材の棚の前で微笑む胡凱の合成画像",
+        "experience.copperCaption": "本人が提供した 2 枚の写真から制作した AI 合成画像。",
+        "experience.openComposite": "合成画像を見る ↗",
         "site.backTop": "ページの先頭へ"
     }
 };
