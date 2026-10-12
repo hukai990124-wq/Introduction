@@ -169,6 +169,14 @@ const english = {
   "experience.camiiBody": "During a Tokyo–Yokohama fieldwork program organized by Toyo University, I visited Tokyo Camii in Yoyogi. Through the staff's welcoming explanations, I learned about the daily lives and culture of Muslims in Japan.",
   "experience.camiiAlt": "Original photo of the Tokyo Camii cultural center's interior, displays and Japanese and Turkish flags",
   "experience.camiiCaption": "My original photo from the Tokyo Camii visit.",
+  "experience.nexusCategory": "MODDING ACHIEVEMENT · NEXUS MODS",
+  "experience.nexusTitle": "Nexus Mods — Mod Author",
+  "experience.nexusDate": "September 2026",
+  "experience.nexusBody": "In September 2026, my mods reached 1,000 total downloads, earning me Mod Author status and an author badge on my Nexus Mods profile.",
+  "experience.nexusAlt": "Nexus Mods achievement notification showing Mod Author status after reaching 1,000 mod downloads",
+  "experience.nexusCaption": "Nexus Mods Mod Author achievement notification.",
+  "experience.openAchievement": "View achievement screenshot ↗",
+  "experience.viewMods": "View my Nexus Mods profile ↗",
   "site.backTop": "Back to top"
 };
 
@@ -345,6 +353,14 @@ export const messages = {
   "experience.camiiBody": "参加东洋大学组织的东京—横滨实地演习时，访问了位于代代木的 Tokyo Camii 清真寺。在寺内工作人员的热心讲解下，了解了在日穆斯林的生活与文化。",
   "experience.camiiAlt": "本人拍摄的 Tokyo Camii 文化中心室内展示及日本、土耳其国旗照片",
   "experience.camiiCaption": "本人拍摄的 Tokyo Camii 参访现场照片。",
+  "experience.nexusCategory": "模组创作成就 · NEXUS MODS",
+  "experience.nexusTitle": "Nexus Mods — Mod Author 作者身份",
+  "experience.nexusDate": "2026 年 9 月",
+  "experience.nexusBody": "2026 年 9 月，模组累计下载量达到 1,000 次，获得 Nexus Mods 平台的 Mod Author 作者身份及个人资料作者徽章。",
+  "experience.nexusAlt": "Nexus Mods 成就通知截图：模组下载量达到 1,000 次后获得 Mod Author 作者身份",
+  "experience.nexusCaption": "Nexus Mods 的 Mod Author 作者成就通知截图。",
+  "experience.openAchievement": "查看成就截图 ↗",
+  "experience.viewMods": "查看我的 Nexus Mods 主页 ↗",
   "site.backTop": "返回顶部"
 },
  ja: {
@@ -516,6 +532,14 @@ export const messages = {
   "experience.camiiBody": "東洋大学が主催する東京・横浜のフィールドワークに参加し、代々木の東京ジャーミイを訪問しました。施設スタッフの丁寧な説明を通じて、日本で暮らすムスリムの生活や文化について学びました。",
   "experience.camiiAlt": "本人が撮影した東京ジャーミイ文化センターの展示と日本・トルコの国旗の写真",
   "experience.camiiCaption": "本人が撮影した東京ジャーミイ訪問時の現地写真。",
+  "experience.nexusCategory": "MOD 制作の実績 · NEXUS MODS",
+  "experience.nexusTitle": "Nexus Mods — Mod Author 認定",
+  "experience.nexusDate": "2026 年 9 月",
+  "experience.nexusBody": "2026 年 9 月、制作した MOD の累計ダウンロード数が 1,000 件に達し、Nexus Mods で Mod Author ステータスとプロフィールの作者バッジを獲得しました。",
+  "experience.nexusAlt": "MOD のダウンロード数が 1,000 件に達して Mod Author ステータスを獲得した Nexus Mods の通知画面",
+  "experience.nexusCaption": "Nexus Mods の Mod Author 実績通知のスクリーンショット。",
+  "experience.openAchievement": "実績のスクリーンショットを見る ↗",
+  "experience.viewMods": "Nexus Mods のプロフィールを見る ↗",
   "site.backTop": "ページの先頭へ"
 }
 } satisfies Record<Language, Record<MessageKey, string>>;
