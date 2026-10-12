@@ -161,9 +161,14 @@ const english = {
   "experience.copperTitle": "Copper Materials Retail Internship",
   "experience.copperDate": "February 2024",
   "experience.copperBody": "In February 2024, I interned at a copper raw materials retailer in Guangdong, China. I learned to use Microsoft Word and Excel, gained customer service experience, and developed practical cutting-machine operation skills.",
-  "experience.copperAlt": "Composite image of Hu Kai smiling in front of a copper materials rack",
-  "experience.copperCaption": "AI composite illustration made from two photos provided by me.",
-  "experience.openComposite": "View composite image ↗",
+  "experience.copperAlt": "Original photo of copper raw materials stored on racks at the internship company",
+  "experience.copperCaption": "My original photo of the company's copper materials racks.",
+  "experience.camiiCategory": "FIELDWORK · TOKYO–YOKOHAMA",
+  "experience.camiiTitle": "Tokyo Camii Visit",
+  "experience.camiiDate": "September 20, 2022",
+  "experience.camiiBody": "During a Tokyo–Yokohama fieldwork program organized by Toyo University, I visited Tokyo Camii in Yoyogi. Through the staff's welcoming explanations, I learned about the daily lives and culture of Muslims in Japan.",
+  "experience.camiiAlt": "Original photo of the Tokyo Camii cultural center's interior, displays and Japanese and Turkish flags",
+  "experience.camiiCaption": "My original photo from the Tokyo Camii visit.",
   "site.backTop": "Back to top"
 };
 
@@ -332,9 +337,14 @@ export const messages = {
   "experience.copperTitle": "红铜原材料零售公司实习",
   "experience.copperDate": "2024 年 2 月",
   "experience.copperBody": "2024 年 2 月，在中国广东省的一家红铜原材料零售公司实习，学习 Microsoft Word、Excel 的使用，积累客户沟通与服务经验，并掌握切割机的操作技巧。",
-  "experience.copperAlt": "胡凯微笑站在红铜材料货架前的合成展示图",
-  "experience.copperCaption": "AI 合成展示图，根据本人提供的两张照片制作。",
-  "experience.openComposite": "查看合成图 ↗",
+  "experience.copperAlt": "本人拍摄的实习公司红铜原材料货架照片",
+  "experience.copperCaption": "本人拍摄的红铜原材料货架现场照片。",
+  "experience.camiiCategory": "实地演习 · 东京—横滨",
+  "experience.camiiTitle": "Tokyo Camii 清真寺参访",
+  "experience.camiiDate": "2022 年 9 月 20 日",
+  "experience.camiiBody": "参加东洋大学组织的东京—横滨实地演习时，访问了位于代代木的 Tokyo Camii 清真寺。在寺内工作人员的热心讲解下，了解了在日穆斯林的生活与文化。",
+  "experience.camiiAlt": "本人拍摄的 Tokyo Camii 文化中心室内展示及日本、土耳其国旗照片",
+  "experience.camiiCaption": "本人拍摄的 Tokyo Camii 参访现场照片。",
   "site.backTop": "返回顶部"
 },
  ja: {
@@ -498,9 +508,14 @@ export const messages = {
   "experience.copperTitle": "銅素材小売企業でのインターンシップ",
   "experience.copperDate": "2024 年 2 月",
   "experience.copperBody": "2024 年 2 月、中国・広東省の銅素材を扱う小売企業でインターンシップに参加しました。Microsoft Word・Excel の使い方を学び、顧客対応の経験を積むとともに、切断機の操作技術を習得しました。",
-  "experience.copperAlt": "銅素材の棚の前で微笑む胡凱の合成画像",
-  "experience.copperCaption": "本人が提供した 2 枚の写真から制作した AI 合成画像。",
-  "experience.openComposite": "合成画像を見る ↗",
+  "experience.copperAlt": "本人が撮影した実習先の銅素材保管棚の写真",
+  "experience.copperCaption": "本人が撮影した銅素材保管棚の現地写真。",
+  "experience.camiiCategory": "フィールドワーク · 東京・横浜",
+  "experience.camiiTitle": "東京ジャーミイ訪問",
+  "experience.camiiDate": "2022 年 9 月 20 日",
+  "experience.camiiBody": "東洋大学が主催する東京・横浜のフィールドワークに参加し、代々木の東京ジャーミイを訪問しました。施設スタッフの丁寧な説明を通じて、日本で暮らすムスリムの生活や文化について学びました。",
+  "experience.camiiAlt": "本人が撮影した東京ジャーミイ文化センターの展示と日本・トルコの国旗の写真",
+  "experience.camiiCaption": "本人が撮影した東京ジャーミイ訪問時の現地写真。",
   "site.backTop": "ページの先頭へ"
 }
 } satisfies Record<Language, Record<MessageKey, string>>;
