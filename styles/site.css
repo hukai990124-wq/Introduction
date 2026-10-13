@@ -175,8 +175,9 @@ h3 { font-family: var(--serif); font-size: 1.2rem; }
 .stamp-image { width: 130px; transform: rotate(-8deg); }
 .stamp-button { position: relative; background: transparent; color: var(--gold); border: 1px dashed var(--gold); border-radius: 50%; width: 110px; height: 110px; font-family: var(--serif); font-size: 1.15rem; transition: background .2s, transform .2s; }
 .stamp-button:hover { background: #d3bb8110; transform: rotate(-8deg); }
-.motto-band { display: flex; align-items: center; justify-content: center; gap: 26px; color: var(--gold); margin-top: 50px; }
-.motto { text-align: center; font: 700 clamp(1.45rem, 3vw, 2.1rem) "UnifrakturCook", var(--serif); }
+.contact-band { color: var(--gold); margin-top: 50px; }
+.contact-line { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 8px; text-align: center; font-size: clamp(1rem, 2vw, 1.2rem); }
+.contact-line a { overflow-wrap: anywhere; }
 
 .certificate-hero { max-width: 850px; }
 .certificate-summary { display: flex; gap: 20px; align-items: center; margin-top: 32px; font: .75rem monospace; letter-spacing: .1em; color: var(--gold); }
@@ -363,7 +364,6 @@ h3 { font-family: var(--serif); font-size: 1.2rem; }
   .cv-grid, .qualifications-list { grid-template-columns: 1fr; }
   .education-stamp { align-items: flex-start; flex-direction: column; }
   .stamp-box { align-self: center; }
-  .motto-band { gap: 15px; }
   .certificate-gallery { grid-template-columns: 1fr; gap: 26px; }
   .certificate-image-link img { height: 330px; }
   .certificate-details { padding: 22px 10px 12px; }
