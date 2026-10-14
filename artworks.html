@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101813">
+<meta name="description" content="ArtWorks Exhibit — Hu Kai’s menswear and armour creations, shown through original in-game screenshots.">
+<title data-i18n="art.title">Hu Kai - ArtWorks Exhibit</title>
+<link rel="preload" href="assets/fonts/UnifrakturCook-Bold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="styles/site.css">
+<script type="module" src="app/main.js"></script>
+</head>
+<body class="artworks-page">
+<a class="skip-link" href="#main" data-i18n="site.skip">Skip to content</a>
+<div class="reading-progress" aria-hidden="true"></div>
+<div class="ambient" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+<header class="site-header" id="top">
+  <a class="brand" href="index.html" data-language-link aria-label="Hu Kai — Home"><span class="brand-monogram" aria-hidden="true">HK</span><span>Hu Kai<span class="brand-caption">PERSONAL ARCHIVE</span></span></a>
+  <nav class="main-navigation" aria-label="Main navigation" data-i18n-aria="nav.label">
+    <a href="index.html" data-language-link data-i18n="nav.home">Home</a>
+    <a href="myCV.html" data-language-link data-i18n="nav.cv" >Curriculum Vitae</a>
+    <a href="certificates.html" data-language-link data-i18n="home.certificates" >Certificates &amp; Achievements</a>
+    <a href="myWorks.html" data-language-link data-i18n="works.heading">MyWorks</a>
+    <a href="artworks.html" data-language-link lang="en" aria-current="page">ArtWorks Exhibit</a>
+  </nav>
+  <nav class="language-switcher" aria-label="Language" data-i18n-aria="language.label" hidden>
+    <button type="button" data-language="en" lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-language="zh" lang="zh-CN" aria-pressed="false">中文</button>
+    <button type="button" data-language="ja" lang="ja" aria-pressed="false">日本語</button>
+  </nav>
+</header>
+<main id="main" class="site-main">
+  <header class="page-hero art-hero" data-reveal>
+    <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span><span data-i18n="art.kicker">ARTWORKS / 003</span><span class="archive-number">/ 005</span></p>
+    <h1 class="display-heading" lang="en">ArtWorks Exhibit</h1>
+    <p class="hero-intro" data-i18n="art.intro">A selection of my menswear and armour creations, shown in game.</p>
+  </header>
+  <nav class="artwork-index" aria-label="Exhibition contents" data-i18n-aria="art.contents">
+    <a href="#british-menswear" lang="en"><span aria-hidden="true">01</span> 1910s Menswear of British Citizen</a>
+    <a href="#acanthus-armour" lang="en"><span aria-hidden="true">02</span> Gilded Acanthus Knight Armour</a>
+    <a href="#jousting-armour" lang="en"><span aria-hidden="true">03</span> Deutsch Maximilian Inspired Jousting Armour</a>
+  </nav>
+  <div class="artwork-exhibition">
+    <article class="artwork-entry" aria-labelledby="british-menswear" data-reveal>
+      <figure>
+        <a class="artwork-image" href="assets/artworks/peaky.png" target="_blank" rel="noopener noreferrer">
+          <img src="assets/artworks/peaky.png" width="1920" height="1080" alt="A character wearing a flat cap, waistcoat, white shirt and tie in a game scene." data-i18n-alt="art.menswearAlt" fetchpriority="high" decoding="async">
+        </a>
+        <figcaption class="artwork-caption">
+          <div><span class="artwork-number" aria-hidden="true">01 /</span><h2 id="british-menswear" lang="en">1910s Menswear of British Citizen</h2></div>
+          <a href="assets/artworks/peaky.png" target="_blank" rel="noopener noreferrer" data-i18n="art.open">View original image ↗</a>
+        </figcaption>
+      </figure>
+    </article>
+    <article class="artwork-entry" aria-labelledby="acanthus-armour" data-reveal>
+      <figure>
+        <a class="artwork-image" href="assets/artworks/Acanthus.png" target="_blank" rel="noopener noreferrer">
+          <img src="assets/artworks/Acanthus.png" width="1920" height="1080" alt="A mounted knight with black and gold acanthus-patterned armour, shield and horse armour." data-i18n-alt="art.acanthusAlt" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="artwork-caption">
+          <div><span class="artwork-number" aria-hidden="true">02 /</span><h2 id="acanthus-armour" lang="en">Gilded Acanthus Knight Armour</h2></div>
+          <a href="assets/artworks/Acanthus.png" target="_blank" rel="noopener noreferrer" data-i18n="art.open">View original image ↗</a>
+        </figcaption>
+      </figure>
+    </article>
+    <article class="artwork-entry" aria-labelledby="jousting-armour" data-reveal>
+      <figure>
+        <a class="artwork-image" href="assets/artworks/jousting.png" target="_blank" rel="noopener noreferrer">
+          <img src="assets/artworks/jousting.png" width="1920" height="1080" alt="A mounted knight wearing fluted metal jousting armour and carrying a lance." data-i18n-alt="art.joustingAlt" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="artwork-caption">
+          <div><span class="artwork-number" aria-hidden="true">03 /</span><h2 id="jousting-armour" lang="en">Deutsch Maximilian Inspired Jousting Armour</h2></div>
+          <a href="assets/artworks/jousting.png" target="_blank" rel="noopener noreferrer" data-i18n="art.open">View original image ↗</a>
+        </figcaption>
+      </figure>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <p data-i18n="home.copyright">© 2026 Hu Kai. All rights reserved.</p>
+  <a href="#top" data-i18n="site.backTop">Back to top</a>
+</footer>
+</body>
+</html>
