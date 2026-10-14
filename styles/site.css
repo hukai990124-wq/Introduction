@@ -178,6 +178,7 @@ h3 { font-family: var(--serif); font-size: 1.2rem; }
 .contact-band { color: var(--gold); margin-top: 50px; }
 .contact-line { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 8px; text-align: center; font-size: clamp(1rem, 2vw, 1.2rem); }
 .contact-line a { overflow-wrap: anywhere; }
+.contact-document { display: flex; justify-content: center; margin-top: 18px; }
 
 .certificate-hero { max-width: 850px; }
 .certificate-summary { display: flex; gap: 20px; align-items: center; margin-top: 32px; font: .75rem monospace; letter-spacing: .1em; color: var(--gold); }
