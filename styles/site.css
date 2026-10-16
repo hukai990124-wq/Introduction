@@ -178,6 +178,10 @@ h3 { font-family: var(--serif); font-size: 1.2rem; }
 .contact-band { color: var(--gold); margin-top: 50px; }
 .contact-line { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 8px; text-align: center; font-size: clamp(1rem, 2vw, 1.2rem); }
 .contact-line a { overflow-wrap: anywhere; }
+.linkedin-contact { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 8px 16px; border: 1px solid currentColor; border-radius: 6px; text-decoration: none; transition: background-color .2s ease; }
+.linkedin-contact svg { flex: none; }
+.linkedin-contact:hover { background-color: rgba(201, 171, 111, .1); }
+.linkedin-contact:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 .contact-document { display: flex; justify-content: center; margin-top: 18px; }
 
 .certificate-hero { max-width: 850px; }
