@@ -1,10 +1,14 @@
 {
   "name": "hukaicv",
   "compatibility_date": "2026-10-10",
+  "build": {
+    "command": "npm run build",
+    "watch_dir": "src"
+  },
   "observability": {
     "enabled": true
   },
   "assets": {
-    "directory": "."
+    "directory": "dist"
   }
 }

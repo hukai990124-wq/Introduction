@@ -1,0 +1,39 @@
+{
+  "folders": [{ "path": "." }],
+  "settings": {
+    "files.exclude": { "**/.git": true, "**/dist": true, "**/node_modules": true },
+    "search.exclude": { "**/dist": true, "**/node_modules": true },
+    "files.encoding": "utf8", "files.eol": "\n"
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "预览网站", "type": "process", "command": "node",
+        "args": ["scripts/site.mjs", "dev"], "isBackground": true,
+        "problemMatcher": {
+          "owner": "hu-kai-site", "pattern": { "regexp": "^(.+):(\\d+): (.*)$", "file": 1, "line": 2, "message": 3 },
+          "background": { "activeOnStart": true, "beginsPattern": "^Starting ", "endsPattern": "^Local:" }
+        },
+        "presentation": { "reveal": "always", "panel": "dedicated" }
+      },
+      {
+        "label": "构建发布文件", "type": "process", "command": "node",
+        "args": ["scripts/site.mjs", "build"], "problemMatcher": [],
+        "group": { "kind": "build", "isDefault": true }
+      },
+      {
+        "label": "检查资源路径", "type": "process", "command": "node",
+        "args": ["scripts/site.mjs", "check"], "problemMatcher": []
+      }
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [{
+      "type": "msedge", "request": "launch", "name": "预览个人网站",
+      "url": "http://127.0.0.1:8765", "webRoot": "${workspaceFolder}/src",
+      "preLaunchTask": "预览网站"
+    }]
+  }
+}

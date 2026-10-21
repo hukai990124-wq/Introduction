@@ -2,13 +2,13 @@
   "name": "hu-kai-personal-site",
   "version": "2.0.0",
   "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" },
   "scripts": {
-    "build": "node scripts/build.mjs",
-    "typecheck": "tsc --noEmit",
-    "preview": "node scripts/preview.mjs",
-    "watch": "tsc --watch"
-  },
-  "devDependencies": {
-    "typescript": "7.0.2"
+    "dev": "node scripts/site.mjs dev",
+    "start": "node scripts/site.mjs dev",
+    "check": "node scripts/site.mjs check",
+    "build": "node scripts/site.mjs build",
+    "preview": "node scripts/site.mjs preview"
   }
 }
