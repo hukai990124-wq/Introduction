@@ -38,19 +38,6 @@ Sociology · Cloud Computing · AI · Creative Arts
 - [Nexus Mods](https://www.nexusmods.com/profile/Hukai19990124)：游戏模组与创作。
 - [QuizSite](https://quizsite.p8.ink/)：答题练习与复习网站。
 
-## 本地运行
-
-本仓库的网站源码使用 HTML、CSS 和 TypeScript 构建。需要 Node.js 18 或更高版本；首次运行时安装 TypeScript 和测试工具等开发依赖。
-
-```sh
-git clone https://github.com/hukai990124-wq/Introduction.git
-cd Introduction
-npm install
-npm run dev
-```
-
-源码位于 `src/html/`（页面）、`src/css/`（样式）、`src/ts/site.ts`（网站交互）、`src/ts/language.ts`（三语文案与语言切换）和 `src/assets/`（图片、字体与文档）。开发与构建工具的主要逻辑位于 `scripts/site.ts`；`scripts/site.mjs` 是兼容 Node.js 18 的编译启动入口。TypeScript 会生成 `src/js/` 中的浏览器脚本，请编辑 `.ts` 源码而非生成的文件。开发服务器会在网站 TypeScript 源码更新后重新编译。
-
 ## 反馈
 
 欢迎通过 [GitHub Issues](https://github.com/hukai990124-wq/Introduction/issues) 提交网站问题、翻译建议或浏览体验反馈。
@@ -89,19 +76,6 @@ This website brings together my education and work experience, qualifications, p
 - [Nexus Mods](https://www.nexusmods.com/profile/Hukai19990124): Game mods and creations.
 - [QuizSite](https://quizsite.p8.ink/): A website for question practice and review.
 
-## Run locally
-
-This repository contains the website source, built with HTML, CSS, and TypeScript. Node.js 18 or later is required; install the development dependencies, including TypeScript and the test tools, before running it.
-
-```sh
-git clone https://github.com/hukai990124-wq/Introduction.git
-cd Introduction
-npm install
-npm run dev
-```
-
-Source files are in `src/html/` (pages), `src/css/` (styles), `src/ts/site.ts` (site interactions), `src/ts/language.ts` (translations and language switching), and `src/assets/` (images, fonts, and documents). The development and build tool logic lives in `scripts/site.ts`; `scripts/site.mjs` is the compilation entry point for Node.js 18. TypeScript generates browser scripts in `src/js/`: edit the `.ts` sources rather than the generated files. The development server recompiles when the website TypeScript sources change.
-
 ## Feedback
 
 Website issues, translation suggestions, and feedback on the browsing experience are welcome through [GitHub Issues](https://github.com/hukai990124-wq/Introduction/issues).
@@ -139,19 +113,6 @@ Hu Kai の個人サイト・作品アーカイブへようこそ。東洋大学�
 - [GitHub](https://github.com/hukai990124-wq)：ソースコードと個人プロジェクト。
 - [Nexus Mods](https://www.nexusmods.com/profile/Hukai19990124)：ゲーム MOD と制作物。
 - [QuizSite](https://quizsite.p8.ink/)：問題演習と復習のための学習サイト。
-
-## ローカルで実行する
-
-このリポジトリには、HTML・CSS・TypeScript で構築したサイトのソースコード一式を収録しています。Node.js 18 以降が必要です。初回実行前に TypeScript やテストツールなどの開発用依存パッケージをインストールしてください。
-
-```sh
-git clone https://github.com/hukai990124-wq/Introduction.git
-cd Introduction
-npm install
-npm run dev
-```
-
-ソースコードは `src/html/`（ページ）、`src/css/`（スタイル）、`src/ts/site.ts`（サイトの動作）、`src/ts/language.ts`（翻訳と言語切り替え）、`src/assets/`（画像・フォント・文書）に配置しています。開発・ビルド用ツールの主要な処理は `scripts/site.ts` にあり、`scripts/site.mjs` は Node.js 18 用のコンパイル起動ファイルです。TypeScript から `src/js/` にブラウザー用スクリプトが生成されます。生成されたファイルではなく `.ts` のソースを編集してください。開発サーバーはサイトの TypeScript ソースの変更後に再コンパイルします。
 
 ## フィードバック
 
