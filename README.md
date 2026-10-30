@@ -1,71 +1,163 @@
-# Hu Kai 个人网站
+# Hu Kai — Personal Archive
 
-这是可以直接用 VS Code 继续维护的完整项目。只编辑 `src/` 中的一套源码：五个 HTML 页面、一份 CSS、一份 JavaScript，以及分类存放的原始素材。没有第三方运行依赖，也不需要安装 npm 包。
+Sociology · Cloud Computing · AI · Creative Arts
 
-## 目录
+[访问网站 · Visit the website · サイトを見る](https://hu-kai-hkcv.tastybloom33.chatgpt.site/)
 
-```text
-Hu-Kai-Website/
-├─ src/                         唯一需要编辑的网页源码
-│  ├─ html/                     页面内容
-│  │  ├─ index.html             首页
-│  │  ├─ myCV.html              简历
-│  │  ├─ certificates.html      证书与经历
-│  │  ├─ myWorks.html           项目链接（包含 QuizSite）
-│  │  └─ artworks.html          艺术作品
-│  ├─ css/site.css              全站样式、布局、纹章闪光效果
-│  ├─ js/site.js                全站逻辑及中英日文案
-│  └─ assets/
-│     ├─ images/
-│     │  ├─ site/               肖像、背景、纹章、印章
-│     │  ├─ artworks/           艺术作品截图
-│     │  ├─ certificates/       证书图片
-│     │  └─ experience/         经历照片
-│     ├─ documents/             简历 PDF
-│     │  └─ certificates/       证书 PDF
-│     └─ fonts/                 本地哥特字体及其许可证
-├─ scripts/site.mjs             开发、检查与构建工具（一个文件）
-├─ Hu-Kai-Website.code-workspace VS Code 工作区与任务配置
-├─ package.json                 常用命令
-├─ wrangler.jsonc               Cloudflare 发布配置
-├─ .openai/hosting.json         当前 Sites 站点标识与发布配置
-└─ dist/                        构建后自动生成，编辑器默认隐藏
-```
+点击语言标题展开或收起。 / Click a language to expand or collapse. / 言語名をクリックして開閉してください。
 
-## 用 VS Code 打开
+<details>
+<summary><strong>简体中文</strong></summary>
 
-1. 安装 Node.js 18 或更高版本，并确认终端能运行 `node --version`。
-2. 在 VS Code 中打开 `Hu-Kai-Website.code-workspace`，或直接打开这个完整文件夹。
-3. 在项目根目录的终端运行 `npm run dev`，浏览器打开 `http://127.0.0.1:8765`。
-4. 修改源码后刷新浏览器即可。按 `Ctrl+C` 停止预览服务。
+## 关于本站
 
-也可以按 F5 启动 Edge 预览；按 `Ctrl+Shift+B` 生成发布文件。所有 VS Code 任务都保存在同一个工作区文件里。
+欢迎来到 Hu Kai 的个人网站与作品档案。我毕业于东洋大学社会学专业，现居东京，正在探索编程、云计算、AI 与数字创作。
+
+这里汇集了我的教育与工作经历、资格证书、个人项目和 Blender 创作。希望通过这些具体的经历与作品，让你了解我的背景、兴趣和正在尝试的方向。
+
+## 网站导览
+
+| 页面 | 内容 |
+| --- | --- |
+| [首页](https://hu-kai-hkcv.tastybloom33.chatgpt.site/index.html?lang=zh) | 个人介绍、学习背景与探索方向 |
+| [个人简历](https://hu-kai-hkcv.tastybloom33.chatgpt.site/myCV.html?lang=zh) | 教育背景、技能、资格与 PDF 简历 |
+| [证书与经历](https://hu-kai-hkcv.tastybloom33.chatgpt.site/certificates.html?lang=zh) | 学历、AWS 与 AI 相关认证、语言成绩及经历记录 |
+| [项目与作品](https://hu-kai-hkcv.tastybloom33.chatgpt.site/myWorks.html?lang=zh) | GitHub 项目、Nexus Mods 创作与 QuizSite 练习网站 |
+| [艺术作品展](https://hu-kai-hkcv.tastybloom33.chatgpt.site/artworks.html?lang=zh) | Blender 制作的盔甲、服饰等模型在游戏中的展示 |
+
+## 浏览体验
+
+- **三语阅读**：网站支持中文、英文和日文，可通过页眉的语言按钮切换。
+- **个人档案风格**：深绿色与金色、哥特字体、个人纹章和印章互动构成整体视觉。
+- **证书与作品展示**：支持证书筛选、大图浏览，以及艺术作品原图查看。
+- **适配不同设备**：响应式布局支持桌面与手机；动效遵循系统的减少动态效果设置，声音由访客主动开启。
+
+## 更多作品
+
+- [GitHub](https://github.com/hukai990124-wq)：源代码与个人项目。
+- [Nexus Mods](https://www.nexusmods.com/profile/Hukai19990124)：游戏模组与创作。
+- [QuizSite](https://quizsite.p8.ink/)：答题练习与复习网站。
+
+## 本地运行
+
+本仓库是网站的完整源码，使用 HTML、CSS 与原生 JavaScript 构建。需要 Node.js 18 或更高版本，无需安装第三方依赖。
 
 ```sh
-npm run dev       # 直接预览 src，无需构建或安装依赖
-npm run check     # 检查 JavaScript 语法、页面链接、图片、字体和 PDF 路径
-npm run build     # 检查后重新生成完整 dist
-npm run preview   # 预览已生成的 dist
+git clone https://github.com/hukai990124-wq/Introduction.git
+cd Introduction
+npm run dev
 ```
 
-请通过本地预览服务打开网页；双击源 HTML 文件使用 file:// 打开不适用于本站的模块脚本与页面资源路径。
+在浏览器打开 <http://127.0.0.1:8765>。`npm run check` 检查脚本语法与本地资源链接；`npm run build` 生成可供静态托管的 `dist/`；`npm run preview` 预览构建结果。
 
-## 日常修改的位置
+源码位于 `src/html/`（页面）、`src/css/`（样式）、`src/js/`（交互与翻译）和 `src/assets/`（图片、字体与文档）；开发与构建工具位于 `scripts/site.mjs`。
 
-- **页面内容**：修改 `src/html/` 对应页面。五个页面各自完整，页面名称与线上地址保持对应。
-- **样式与纹章**：修改 `src/css/site.css`。这里集中管理颜色、响应式布局、哥特字体、纹章的光晕与扫光。
-- **行为与翻译**：修改 `src/js/site.js`。文件用可折叠的区域分为文案、语言切换、动效、证书查看器、音频、印章和初始化；可在 VS Code 中搜索区域名称或函数名定位。
-- **新增素材**：放入 `src/assets/` 对应分类，再修改 HTML/CSS 的路径。页面中的资源路径使用 `assets/...`，CSS 中使用 `../assets/...`。
-- **QuizSite**：链接在 `src/html/myWorks.html`，三种语言的介绍位于 `src/js/site.js` 的多语言文案区域；当前地址是 `https://quizsite.p8.ink/`。
+## 反馈
 
-`dist/` 是发布产物，每次构建都会重建，不需要手动编辑，也不提交到 Git。旧的 TypeScript、编译目录和重复源码已经整合；开发不再需要 TypeScript 编译器或包管理器锁文件。
+欢迎通过 [GitHub Issues](https://github.com/hukai990124-wq/Introduction/issues) 提交网站问题、翻译建议或浏览体验反馈。
 
-## 功能与发布
+</details>
 
-中英日切换、证书筛选与大图查看、页面动效、纹章与格言、印章互动和原有的本地合成音频都集中在当前源码中。音频由访问者主动开启；动效遵循系统的减少动态效果设置。
+<details>
+<summary><strong>English</strong></summary>
 
-运行 `npm run build` 后，将 `dist/` 的内容上传到静态网站托管即可。页面依然使用 `index.html`、`myCV.html`、`certificates.html`、`myWorks.html` 和 `artworks.html` 的地址。Cloudflare 配置与 Sites 配置均指向 `dist/`。
+## About
 
-当前个人网站：<https://hu-kai-hkcv.tastybloom33.chatgpt.site/>。
+Welcome to Hu Kai's personal website and creative archive. I am a sociology graduate of Toyo University, based in Tokyo and exploring programming, cloud computing, AI, and digital art.
 
-如以后连接 Cloudflare Workers Builds，请在其控制台把 Build command 设为 `npm run build`；本地 Wrangler 发布已经配置相同的构建命令。相关说明见 [Cloudflare 官方构建文档](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/)。
+This website brings together my education and work experience, qualifications, personal projects, and Blender creations. These experiences and works offer a closer look at my background, interests, and the directions I am exploring.
+
+## Explore the website
+
+| Page | What you will find |
+| --- | --- |
+| [Home](https://hu-kai-hkcv.tastybloom33.chatgpt.site/index.html?lang=en) | A personal introduction, learning background, and areas of interest |
+| [Curriculum Vitae](https://hu-kai-hkcv.tastybloom33.chatgpt.site/myCV.html?lang=en) | Education, skills, qualifications, and a PDF résumé |
+| [Certificates & Achievements](https://hu-kai-hkcv.tastybloom33.chatgpt.site/certificates.html?lang=en) | Academic qualifications, AWS and AI certifications, language test results, and experience records |
+| [MyWorks](https://hu-kai-hkcv.tastybloom33.chatgpt.site/myWorks.html?lang=en) | GitHub projects, Nexus Mods creations, and the QuizSite practice website |
+| [ArtWorks Exhibit](https://hu-kai-hkcv.tastybloom33.chatgpt.site/artworks.html?lang=en) | In-game showcases of armour, clothing, and other models created in Blender |
+
+## Browsing experience
+
+- **Three languages**: Read in Chinese, English, or Japanese using the language buttons in the site header.
+- **A personal archive aesthetic**: Deep green and gold, Gothic typography, a personal coat of arms, and an interactive stamp shape the visual identity.
+- **Certificates and artwork**: Filter certificates, browse full-size scans, and view original artwork images.
+- **Across devices**: Responsive layouts support desktop and mobile browsing. Animations respect the system's reduced-motion setting, and sound starts only when enabled by the visitor.
+
+## More projects
+
+- [GitHub](https://github.com/hukai990124-wq): Source code and personal projects.
+- [Nexus Mods](https://www.nexusmods.com/profile/Hukai19990124): Game mods and creations.
+- [QuizSite](https://quizsite.p8.ink/): A website for question practice and review.
+
+## Run locally
+
+This repository contains the complete website source, built with HTML, CSS, and vanilla JavaScript. Node.js 18 or later is required; no third-party dependencies need to be installed.
+
+```sh
+git clone https://github.com/hukai990124-wq/Introduction.git
+cd Introduction
+npm run dev
+```
+
+Open <http://127.0.0.1:8765> in your browser. Use `npm run check` to validate JavaScript syntax and local resource links, `npm run build` to generate `dist/` for static hosting, and `npm run preview` to preview the build.
+
+Source files are in `src/html/` (pages), `src/css/` (styles), `src/js/` (interactions and translations), and `src/assets/` (images, fonts, and documents). Development and build tools are in `scripts/site.mjs`.
+
+## Feedback
+
+Website issues, translation suggestions, and feedback on the browsing experience are welcome through [GitHub Issues](https://github.com/hukai990124-wq/Introduction/issues).
+
+</details>
+
+<details>
+<summary><strong>日本語</strong></summary>
+
+## このサイトについて
+
+Hu Kai の個人サイト・作品アーカイブへようこそ。東洋大学で社会学を学び、現在は東京を拠点に、プログラミング、クラウド、AI、デジタル制作に取り組んでいます。
+
+このサイトでは、学歴・職歴、資格、個人プロジェクト、Blender で制作した作品を紹介しています。これまでの経験や作品を通じて、私の背景や関心、現在取り組んでいることを知っていただければ幸いです。
+
+## サイトガイド
+
+| ページ | 内容 |
+| --- | --- |
+| [ホーム](https://hu-kai-hkcv.tastybloom33.chatgpt.site/index.html?lang=ja) | 自己紹介、学習の背景、関心のある分野 |
+| [履歴書](https://hu-kai-hkcv.tastybloom33.chatgpt.site/myCV.html?lang=ja) | 学歴、スキル、資格、PDF 版の履歴書 |
+| [資格・実績](https://hu-kai-hkcv.tastybloom33.chatgpt.site/certificates.html?lang=ja) | 学位、AWS・AI 関連資格、語学試験の成績、経験の記録 |
+| [プロジェクト・制作物](https://hu-kai-hkcv.tastybloom33.chatgpt.site/myWorks.html?lang=ja) | GitHub のプロジェクト、Nexus Mods の制作物、QuizSite 学習サイト |
+| [アート作品展示](https://hu-kai-hkcv.tastybloom33.chatgpt.site/artworks.html?lang=ja) | Blender で制作した鎧や衣装などのモデルをゲーム内で展示 |
+
+## サイトの特徴
+
+- **3 言語に対応**：ヘッダーの言語ボタンから、中国語・英語・日本語を切り替えられます。
+- **個人アーカイブの世界観**：深緑と金色、ゴシック書体、個人の紋章、スタンプの仕掛けを取り入れています。
+- **資格と作品の閲覧**：資格の絞り込み、証明書画像の拡大表示、作品の元画像の閲覧に対応しています。
+- **さまざまな端末で閲覧**：PC・スマートフォンに合わせたレイアウトを採用しています。アニメーションはシステムの「視差効果を減らす」設定に従い、音声は閲覧者が有効にした場合に再生されます。
+
+## その他のプロジェクト
+
+- [GitHub](https://github.com/hukai990124-wq)：ソースコードと個人プロジェクト。
+- [Nexus Mods](https://www.nexusmods.com/profile/Hukai19990124)：ゲーム MOD と制作物。
+- [QuizSite](https://quizsite.p8.ink/)：問題演習と復習のための学習サイト。
+
+## ローカルで実行する
+
+このリポジトリには、HTML・CSS・標準の JavaScript で構築したサイトのソースコード一式を収録しています。Node.js 18 以降が必要です。外部の依存パッケージをインストールする必要はありません。
+
+```sh
+git clone https://github.com/hukai990124-wq/Introduction.git
+cd Introduction
+npm run dev
+```
+
+ブラウザーで <http://127.0.0.1:8765> を開いてください。`npm run check` で JavaScript の構文とローカルリソースへのリンクを確認し、`npm run build` で静的ホスティング用の `dist/` を生成します。`npm run preview` でビルド結果をプレビューできます。
+
+ソースコードは `src/html/`（ページ）、`src/css/`（スタイル）、`src/js/`（動作と翻訳）、`src/assets/`（画像・フォント・文書）に配置しています。開発・ビルド用ツールは `scripts/site.mjs` にあります。
+
+## フィードバック
+
+サイトの不具合、翻訳の改善案、閲覧時の気づきなどは、[GitHub Issues](https://github.com/hukai990124-wq/Introduction/issues) からお寄せください。
+
+</details>
