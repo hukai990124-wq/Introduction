@@ -1,7 +1,7 @@
 import { createLanguageController } from "./language.js";
 
 // #region 02 浏览器偏好设置
-function readPreference(key, fallback) {
+function readPreference(key: string, fallback: string): string {
     try {
         return localStorage.getItem(key) ?? fallback;
     }
@@ -9,7 +9,7 @@ function readPreference(key, fallback) {
         return fallback;
     }
 }
-function savePreference(key, value) {
+function savePreference(key: string, value: string): void {
     try {
         localStorage.setItem(key, value);
     }
@@ -22,17 +22,17 @@ function savePreference(key, value) {
 
 // #region 03 音频通用工具
 function audioContextClass() {
-    const browser = window;
+    const browser = window as typeof window & { webkitAudioContext?: typeof AudioContext };
     return browser.AudioContext ?? browser.webkitAudioContext;
 }
 function offlineContextClass() {
-    const browser = window;
+    const browser = window as typeof window & { webkitOfflineAudioContext?: typeof OfflineAudioContext };
     const Context = browser.OfflineAudioContext ?? browser.webkitOfflineAudioContext;
     if (!Context)
         throw new Error("Offline audio synthesis is unavailable.");
     return Context;
 }
-function normalizeBuffer(buffer, fadeSeconds = 0.3) {
+function normalizeBuffer(buffer: AudioBuffer, fadeSeconds = 0.3): AudioBuffer {
     let peak = 0;
     for (let channel = 0; channel < buffer.numberOfChannels; channel++) {
         for (const value of buffer.getChannelData(channel))
@@ -58,7 +58,7 @@ const { initLanguage, translate } = createLanguageController({ readPreference, s
 // #region 05 页面动效
 function initMotion() {
     const reduced = matchMedia("(prefers-reduced-motion: reduce)");
-    const progress = document.querySelector(".reading-progress");
+    const progress = document.querySelector<HTMLElement>(".reading-progress");
     let frame = 0;
     const updateProgress = () => {
         frame = 0;
@@ -75,7 +75,7 @@ function initMotion() {
     addEventListener("resize", scheduleProgress, { passive: true });
     updateProgress();
     const panels = document.querySelectorAll("[data-reveal]");
-    let observer;
+    let observer: IntersectionObserver | undefined;
     const showAll = () => {
         observer?.disconnect();
         panels.forEach(panel => panel.classList.add("is-visible"));
@@ -97,7 +97,7 @@ function initMotion() {
     }
     reduced.addEventListener("change", event => { if (event.matches)
         showAll(); });
-    document.querySelectorAll(".tilt-surface").forEach(surface => {
+    document.querySelectorAll<HTMLElement>(".tilt-surface").forEach(surface => {
         let tiltFrame = 0;
         surface.addEventListener("pointermove", event => {
             if (reduced.matches || event.pointerType !== "mouse")
@@ -128,28 +128,38 @@ function initMotion() {
 
 // #region 06 证书筛选与图片查看器
 function initCertificates() {
-    const gallery = document.querySelector(".certificate-gallery");
-    const dialog = document.querySelector(".certificate-dialog");
-    const image = dialog?.querySelector(".viewer-image");
-    const heading = dialog?.querySelector(".viewer-title");
-    const position = dialog?.querySelector(".viewer-position");
-    const original = dialog?.querySelector(".viewer-original");
-    const error = dialog?.querySelector(".viewer-error");
+    const gallery = document.querySelector<HTMLElement>(".certificate-gallery");
+    const dialog = document.querySelector<HTMLDialogElement>(".certificate-dialog");
+    const image = dialog?.querySelector<HTMLImageElement>(".viewer-image");
+    const heading = dialog?.querySelector<HTMLElement>(".viewer-title");
+    const position = dialog?.querySelector<HTMLElement>(".viewer-position");
+    const original = dialog?.querySelector<HTMLAnchorElement>(".viewer-original");
+    const error = dialog?.querySelector<HTMLElement>(".viewer-error");
     if (!gallery || !dialog || !image || !heading || !position || !original || !error)
         return;
     createGallery({ gallery, dialog, image, heading, position, original, error });
 }
-function createGallery({ gallery, dialog, image, heading, position, original, error }) {
-    const records = [];
-    gallery.querySelectorAll(".certificate-record").forEach(element => {
-        const scan = element.querySelector(".certificate-image-link img");
+type GalleryElements = {
+    gallery: HTMLElement;
+    dialog: HTMLDialogElement;
+    image: HTMLImageElement;
+    heading: HTMLElement;
+    position: HTMLElement;
+    original: HTMLAnchorElement;
+    error: HTMLElement;
+};
+
+function createGallery({ gallery, dialog, image, heading, position, original, error }: GalleryElements): void {
+    const records: { element: HTMLElement; image: HTMLImageElement; heading: HTMLElement }[] = [];
+    gallery.querySelectorAll<HTMLElement>(".certificate-record").forEach(element => {
+        const scan = element.querySelector<HTMLImageElement>(".certificate-image-link img");
         const title = element.querySelector("h2");
         if (scan && title)
             records.push({ element, image: scan, heading: title });
     });
     let visible = records;
     let selected = 0;
-    let trigger;
+    let trigger: HTMLElement | undefined;
     const count = document.querySelector(".certificate-count");
     function display() {
         const record = visible[selected];
@@ -162,7 +172,7 @@ function createGallery({ gallery, dialog, image, heading, position, original, er
         original.href = record.image.src;
         error.hidden = true;
     }
-    gallery.querySelectorAll(".certificate-image-link, .certificate-open").forEach(link => {
+    gallery.querySelectorAll<HTMLElement>(".certificate-image-link, .certificate-open").forEach(link => {
         link.addEventListener("click", event => {
             if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || typeof dialog.showModal !== "function")
                 return;
@@ -177,7 +187,7 @@ function createGallery({ gallery, dialog, image, heading, position, original, er
             document.body.classList.add("viewer-open");
         });
     });
-    const change = (offset) => {
+    const change = (offset: number) => {
         if (!visible.length)
             return;
         selected = (selected + offset + visible.length) % visible.length;
@@ -200,8 +210,8 @@ function createGallery({ gallery, dialog, image, heading, position, original, er
         dialog.close(); });
     dialog.addEventListener("close", () => { document.body.classList.remove("viewer-open"); trigger?.focus({ preventScroll: true }); });
     image.addEventListener("error", () => { error.hidden = false; });
-    const filters = document.querySelector(".certificate-filters");
-    filters?.querySelectorAll("[data-filter]").forEach(button => {
+    const filters = document.querySelector<HTMLElement>(".certificate-filters");
+    filters?.querySelectorAll<HTMLElement>("[data-filter]").forEach(button => {
         button.addEventListener("click", () => {
             const category = button.dataset.filter;
             visible = records.filter(record => category === "all" || record.element.dataset.category === category);
@@ -268,7 +278,7 @@ async function createImperialHymn() {
     wet.gain.value = 0.38;
     mix.connect(reverb).connect(wet).connect(context.destination);
     const wave = context.createPeriodicWave(new Float32Array(9), new Float32Array([0, 1, 0.25, 0.1, 0.17, 0.03, 0.06, 0.01, 0.025]));
-    function note(midi, start, length, volume, pan) {
+    function note(midi: number, start: number, length: number, volume: number, pan: number): void {
         const pipe = context.createOscillator();
         pipe.setPeriodicWave(wave);
         pipe.frequency.value = 440 * 2 ** ((midi - 69) / 12);
@@ -333,7 +343,7 @@ async function createMusterSoundscape() {
         seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
         noiseSamples[i] = seed / 4294967296 * 2 - 1;
     }
-    function noise(start, length, frequency, volume, pan) {
+    function noise(start: number, length: number, frequency: number, volume: number, pan: number): void {
         const source = context.createBufferSource();
         source.buffer = noiseBuffer;
         const filter = context.createBiquadFilter();
@@ -348,7 +358,7 @@ async function createMusterSoundscape() {
         source.connect(filter).connect(gain).connect(position).connect(mix);
         source.start(start, 0, length);
     }
-    function thud(start, pitch, length, volume, pan) {
+    function thud(start: number, pitch: number, length: number, volume: number, pan: number): void {
         const oscillator = context.createOscillator();
         oscillator.type = "triangle";
         oscillator.frequency.setValueAtTime(pitch, start);
@@ -363,7 +373,7 @@ async function createMusterSoundscape() {
         oscillator.stop(start + length);
     }
     const brassWave = context.createPeriodicWave(new Float32Array(8), new Float32Array([0, 1, 0.6, 0.35, 0.2, 0.12, 0.07, 0.035]));
-    function brass(midi, start, length, volume, pan) {
+    function brass(midi: number, start: number, length: number, volume: number, pan: number): void {
         const oscillator = context.createOscillator();
         oscillator.setPeriodicWave(brassWave);
         oscillator.frequency.value = 440 * 2 ** ((midi - 69) / 12);
@@ -429,27 +439,35 @@ async function createMusterSoundscape() {
 
 // #region 09 音频播放器
 function initAudioPlayer() {
-    const panel = document.querySelector("[data-audio-track]");
-    const toggle = panel?.querySelector(".audio-toggle");
-    const mute = panel?.querySelector(".music-mute");
-    const volumeInput = panel?.querySelector(".audio-volume");
-    const status = panel?.querySelector(".audio-status");
+    const panel = document.querySelector<HTMLElement>("[data-audio-track]");
+    const toggle = panel?.querySelector<HTMLButtonElement>(".audio-toggle");
+    const mute = panel?.querySelector<HTMLButtonElement>(".music-mute");
+    const volumeInput = panel?.querySelector<HTMLInputElement>(".audio-volume");
+    const status = panel?.querySelector<HTMLElement>(".audio-status");
     if (!panel || !toggle || !mute || !volumeInput || !status)
         return { isMuted: () => false };
     return createPlayer({ panel, toggle, mute, volumeInput, status });
 }
-function createPlayer({ panel, toggle, mute, volumeInput, status }) {
+type PlayerElements = {
+    panel: HTMLElement;
+    toggle: HTMLButtonElement;
+    mute: HTMLButtonElement;
+    volumeInput: HTMLInputElement;
+    status: HTMLElement;
+};
+
+function createPlayer({ panel, toggle, mute, volumeInput, status }: PlayerElements) {
     const track = panel.dataset.audioTrack === "march" ? "march" : "hymn";
     const mutedKey = track === "hymn" ? "hukai-hymn-muted" : "hukai-march-muted";
     const volumeKey = `hukai-${track}-volume`;
     let muted = readPreference(mutedKey, "false") === "true";
     const savedVolume = Number(readPreference(volumeKey, "18"));
     let volume = Number.isFinite(savedVolume) ? Math.min(50, Math.max(0, savedVolume)) / 100 : 0.18;
-    let context;
-    let gain;
-    let source;
-    let rendering;
-    let buffer;
+    let context: AudioContext | undefined;
+    let gain: GainNode | undefined;
+    let source: AudioBufferSourceNode | undefined;
+    let rendering: Promise<AudioBuffer> | undefined;
+    let buffer: AudioBuffer | undefined;
     let wanted = false;
     let failed = false;
     volumeInput.value = String(volume * 100);
@@ -573,13 +591,13 @@ function createPlayer({ panel, toggle, mute, volumeInput, status }) {
 // #endregion
 
 // #region 10 印章互动
-function initStamp(audio) {
-    const button = document.querySelector(".stamp-button");
-    const image = document.querySelector(".stamp-image");
+function initStamp(audio: { isMuted: () => boolean }): void {
+    const button = document.querySelector<HTMLButtonElement>(".stamp-button");
+    const image = document.querySelector<HTMLImageElement>(".stamp-image");
     if (!button || !image)
         return;
-    let effectContext;
-    const release = (context) => {
+    let effectContext: AudioContext | undefined;
+    const release = (context: AudioContext | undefined) => {
         if (effectContext === context)
             effectContext = undefined;
         if (context && context.state !== "closed") {
@@ -590,7 +608,7 @@ function initStamp(audio) {
         const Context = audioContextClass();
         if (!Context || audio.isMuted() || effectContext)
             return;
-        let context;
+        let context: AudioContext | undefined;
         try {
             context = new Context();
             effectContext = context;

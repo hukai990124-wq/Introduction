@@ -670,7 +670,7 @@ function supported(value: string | null | undefined): value is Language {
     return value === "en" || value === "zh" || value === "ja";
 }
 
-function messageKey(value: string | undefined): value is MessageKey {
+export function isMessageKey(value: string | undefined): value is MessageKey {
     return value !== undefined && Object.prototype.hasOwnProperty.call(messages.en, value);
 }
 
@@ -685,15 +685,15 @@ export function createLanguageController({ readPreference, savePreference }: Pre
         language = next;
         document.documentElement.lang = locale[next];
         document.querySelectorAll<HTMLElement>("[data-i18n]").forEach(element => {
-            if (messageKey(element.dataset.i18n))
+            if (isMessageKey(element.dataset.i18n))
                 element.textContent = translate(element.dataset.i18n);
         });
         document.querySelectorAll<HTMLImageElement>("[data-i18n-alt]").forEach(element => {
-            if (messageKey(element.dataset.i18nAlt))
+            if (isMessageKey(element.dataset.i18nAlt))
                 element.alt = translate(element.dataset.i18nAlt);
         });
         document.querySelectorAll<HTMLElement>("[data-i18n-aria]").forEach(element => {
-            if (messageKey(element.dataset.i18nAria))
+            if (isMessageKey(element.dataset.i18nAria))
                 element.setAttribute("aria-label", translate(element.dataset.i18nAria));
         });
         document.querySelectorAll<HTMLElement>("[data-language]").forEach(button => {

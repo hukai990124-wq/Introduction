@@ -40,7 +40,7 @@ Sociology · Cloud Computing · AI · Creative Arts
 
 ## 本地运行
 
-本仓库使用 HTML、CSS、JavaScript 和 TypeScript 构建。需要 Node.js 18 或更高版本；首次运行时安装开发依赖 TypeScript。
+本仓库的网站源码使用 HTML、CSS 和 TypeScript 构建。需要 Node.js 18 或更高版本；首次运行时安装 TypeScript 和测试工具等开发依赖。
 
 ```sh
 git clone https://github.com/hukai990124-wq/Introduction.git
@@ -49,9 +49,9 @@ npm install
 npm run dev
 ```
 
-在浏览器打开 <http://127.0.0.1:8765>。`npm run check` 检查 TypeScript 类型、脚本语法与本地资源链接；`npm test` 验证语言切换；`npm run build` 生成可供静态托管的 `dist/`；`npm run preview` 预览构建结果。Windows PowerShell 如果无法执行 `npm`，可以使用 `npm.cmd`。
+在浏览器打开 <http://127.0.0.1:8765>。`npm run check` 检查 TypeScript 类型与本地资源链接；`npm test` 验证语言切换、证书查看与印章等交互；`npm run build` 生成可供静态托管的 `dist/`；`npm run preview` 预览构建结果。Windows PowerShell 如果无法执行 `npm`，可以使用 `npm.cmd`。
 
-源码位于 `src/html/`（页面）、`src/css/`（样式）、`src/js/`（交互）、`src/ts/language.ts`（三语文案与语言切换）和 `src/assets/`（图片、字体与文档）；开发与构建工具位于 `scripts/site.mjs`。语言模块会编译为 `src/js/language.js`，请编辑 TypeScript 源码而非生成的文件。开发服务器会在语言源码更新后重新编译。
+源码位于 `src/html/`（页面）、`src/css/`（样式）、`src/ts/site.ts`（网站交互）、`src/ts/language.ts`（三语文案与语言切换）和 `src/assets/`（图片、字体与文档）。开发与构建工具的主要逻辑位于 `scripts/site.ts`；`scripts/site.mjs` 是兼容 Node.js 18 的编译启动入口。TypeScript 会生成 `src/js/` 中的浏览器脚本，请编辑 `.ts` 源码而非生成的文件。开发服务器会在网站 TypeScript 源码更新后重新编译。
 
 ## 反馈
 
@@ -93,7 +93,7 @@ This website brings together my education and work experience, qualifications, p
 
 ## Run locally
 
-This repository contains the website source, built with HTML, CSS, JavaScript, and TypeScript. Node.js 18 or later is required; install the TypeScript development dependency before running it.
+This repository contains the website source, built with HTML, CSS, and TypeScript. Node.js 18 or later is required; install the development dependencies, including TypeScript and the test tools, before running it.
 
 ```sh
 git clone https://github.com/hukai990124-wq/Introduction.git
@@ -102,9 +102,9 @@ npm install
 npm run dev
 ```
 
-Open <http://127.0.0.1:8765> in your browser. Use `npm run check` to validate TypeScript types, JavaScript syntax, and local resource links; `npm test` to check language switching; `npm run build` to generate `dist/` for static hosting; and `npm run preview` to preview the build. If Windows PowerShell cannot run `npm`, use `npm.cmd` instead.
+Open <http://127.0.0.1:8765> in your browser. Use `npm run check` to validate TypeScript types and local resource links; `npm test` to check language switching, the certificate viewer, and stamp interactions; `npm run build` to generate `dist/` for static hosting; and `npm run preview` to preview the build. If Windows PowerShell cannot run `npm`, use `npm.cmd` instead.
 
-Source files are in `src/html/` (pages), `src/css/` (styles), `src/js/` (interactions), `src/ts/language.ts` (translations and language switching), and `src/assets/` (images, fonts, and documents). Development and build tools are in `scripts/site.mjs`. The language module is compiled to `src/js/language.js`; edit the TypeScript source rather than the generated file. The development server recompiles it when the source changes.
+Source files are in `src/html/` (pages), `src/css/` (styles), `src/ts/site.ts` (site interactions), `src/ts/language.ts` (translations and language switching), and `src/assets/` (images, fonts, and documents). The development and build tool logic lives in `scripts/site.ts`; `scripts/site.mjs` is the compilation entry point for Node.js 18. TypeScript generates browser scripts in `src/js/`: edit the `.ts` sources rather than the generated files. The development server recompiles when the website TypeScript sources change.
 
 ## Feedback
 
@@ -146,7 +146,7 @@ Hu Kai の個人サイト・作品アーカイブへようこそ。東洋大学�
 
 ## ローカルで実行する
 
-このリポジトリには、HTML・CSS・JavaScript・TypeScript で構築したサイトのソースコード一式を収録しています。Node.js 18 以降が必要です。初回実行前に開発用の TypeScript をインストールしてください。
+このリポジトリには、HTML・CSS・TypeScript で構築したサイトのソースコード一式を収録しています。Node.js 18 以降が必要です。初回実行前に TypeScript やテストツールなどの開発用依存パッケージをインストールしてください。
 
 ```sh
 git clone https://github.com/hukai990124-wq/Introduction.git
@@ -155,9 +155,9 @@ npm install
 npm run dev
 ```
 
-ブラウザーで <http://127.0.0.1:8765> を開いてください。`npm run check` で TypeScript の型、JavaScript の構文、ローカルリソースへのリンクを確認し、`npm test` で言語切り替えを検証します。`npm run build` で静的ホスティング用の `dist/` を生成し、`npm run preview` でプレビューできます。Windows PowerShell で `npm` を実行できない場合は `npm.cmd` を使用してください。
+ブラウザーで <http://127.0.0.1:8765> を開いてください。`npm run check` で TypeScript の型とローカルリソースへのリンクを確認し、`npm test` で言語切り替え、証明書の閲覧、スタンプなどの操作を検証します。`npm run build` で静的ホスティング用の `dist/` を生成し、`npm run preview` でプレビューできます。Windows PowerShell で `npm` を実行できない場合は `npm.cmd` を使用してください。
 
-ソースコードは `src/html/`（ページ）、`src/css/`（スタイル）、`src/js/`（動作）、`src/ts/language.ts`（翻訳と言語切り替え）、`src/assets/`（画像・フォント・文書）に配置しています。開発・ビルド用ツールは `scripts/site.mjs` にあります。言語モジュールは `src/js/language.js` にコンパイルされます。生成されたファイルではなく TypeScript のソースを編集してください。開発サーバーはソースの変更後に再コンパイルします。
+ソースコードは `src/html/`（ページ）、`src/css/`（スタイル）、`src/ts/site.ts`（サイトの動作）、`src/ts/language.ts`（翻訳と言語切り替え）、`src/assets/`（画像・フォント・文書）に配置しています。開発・ビルド用ツールの主要な処理は `scripts/site.ts` にあり、`scripts/site.mjs` は Node.js 18 用のコンパイル起動ファイルです。TypeScript から `src/js/` にブラウザー用スクリプトが生成されます。生成されたファイルではなく `.ts` のソースを編集してください。開発サーバーはサイトの TypeScript ソースの変更後に再コンパイルします。
 
 ## フィードバック
 

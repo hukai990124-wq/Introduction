@@ -1,5 +1,6 @@
 node_modules/
-src/js/language.js
+src/js/
+scripts/.generated/
 dist/
 .env
 .env.*
