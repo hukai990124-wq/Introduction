@@ -1,4 +1,4 @@
-// Local development and build tools. Uses Node.js built-ins only.
+// Local development and build tools.
 import http from "node:http";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -8,6 +8,8 @@ import { cpSync, existsSync, lstatSync, mkdirSync, readdirSync, readFileSync, rm
 const root = path.resolve(fileURLToPath(new URL("../", import.meta.url)));
 const source = path.join(root, "src");
 const output = path.join(root, "dist");
+const languageSource = path.join(source, "ts/language.ts");
+const languageOutput = path.join(source, "js/language.js");
 const mime = {
   ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8",
   ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".svg": "image/svg+xml", ".webp": "image/webp",
@@ -28,7 +30,17 @@ function publicFile(pathname, built = false) {
   return null;
 }
 
+function compileLanguage(noEmit = false) {
+  const compiler = path.join(root, "node_modules/typescript/bin/tsc");
+  if (!existsSync(compiler)) throw new Error("TypeScript is missing. Run npm install first.");
+  const args = [compiler, "--project", path.join(root, "tsconfig.json")];
+  if (noEmit) args.push("--noEmit");
+  const result = spawnSync(process.execPath, args, { stdio: "inherit" });
+  if (result.status !== 0) throw new Error("TypeScript validation failed.");
+}
+
 function check() {
+  compileLanguage(true);
   const syntax = spawnSync(process.execPath, ["--check", path.join(source, "js/site.js")], { stdio: "inherit" });
   if (syntax.status !== 0) throw new Error("JavaScript syntax validation failed.");
   const files = readdirSync(path.join(source, "html")).filter(name => name.endsWith(".html"));
@@ -58,6 +70,7 @@ function check() {
 
 function build() {
   check();
+  compileLanguage();
   // Replace only this project's generated directory; never follow a link.
   if (path.dirname(output) !== root) throw new Error("Invalid output directory.");
   if (existsSync(output) && lstatSync(output).isSymbolicLink()) throw new Error("dist must not be a symbolic link.");
@@ -72,6 +85,11 @@ function build() {
 
 function serve(built = false) {
   if (built && !existsSync(path.join(output, "index.html"))) throw new Error("Run npm run build before npm run preview.");
+  let compiledSourceTime = 0;
+  if (!built) {
+    compileLanguage();
+    compiledSourceTime = lstatSync(languageSource).mtimeMs;
+  }
   const port = Number(process.env.PORT || 8765);
   if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error("PORT must be an integer from 1 to 65535.");
   console.log("Starting local website preview...");
@@ -80,6 +98,16 @@ function serve(built = false) {
     try {
       const url = new URL(request.url || "/", "http://localhost");
       const filename = publicFile(url.pathname, built);
+      if (!built && filename === languageOutput && lstatSync(languageSource).mtimeMs !== compiledSourceTime) {
+        try {
+          compileLanguage();
+          compiledSourceTime = lstatSync(languageSource).mtimeMs;
+        } catch (error) {
+          console.error(error.message);
+          response.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" }).end("TypeScript compilation failed. Check the terminal.");
+          return;
+        }
+      }
       if (!filename || !mime[path.extname(filename)] || !lstatSync(filename).isFile()) throw new Error("Not found");
       const content = readFileSync(filename);
       response.writeHead(200, { "Content-Type": mime[path.extname(filename)], "Content-Length": content.length, "Cache-Control": "no-store" });
