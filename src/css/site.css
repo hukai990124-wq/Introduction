@@ -194,7 +194,7 @@ h3 { font-family: var(--serif); font-size: 1.2rem; }
 .qualifications-list { list-style: none; margin: 0 0 24px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; }
 .qualifications-list li { padding: 22px 0; border-bottom: 1px solid var(--line); font-size: .92rem; }
 .qualifications-list strong { font-weight: 500; color: var(--paper); }
-.qualifications-list li span { display: inline-block; font-size: .76rem; color: var(--muted); margin-top: 7px; }
+.qualifications-list li > span { display: inline-block; font-size: .76rem; color: var(--muted); margin-top: 7px; }
 .education-stamp { display: flex; justify-content: space-between; align-items: center; gap: 32px; }
 .education h2 { margin-bottom: 20px; }
 .education strong { color: var(--paper); font-size: 1.15rem; font-family: var(--serif); }
