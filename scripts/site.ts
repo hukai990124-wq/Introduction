@@ -8,7 +8,7 @@ import { cpSync, existsSync, lstatSync, mkdirSync, readdirSync, readFileSync, rm
 const root = path.resolve(fileURLToPath(new URL("../../", import.meta.url)));
 const source = path.join(root, "src");
 const output = path.join(root, "dist");
-const typeScriptSources = ["site.ts", "language.ts"].map(file => path.join(source, "ts", file));
+const typeScriptSources = readdirSync(path.join(source, "ts")).filter(file => file.endsWith(".ts")).map(file => path.join(source, "ts", file));
 const generatedScripts = path.join(source, "js");
 const mime: Record<string, string> = {
   ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8",
@@ -36,6 +36,8 @@ function compileTypeScript() {
   const args = [compiler, "--project", path.join(root, "tsconfig.json")];
   const result = spawnSync(process.execPath, args, { stdio: "inherit" });
   if (result.status !== 0) throw new Error("TypeScript validation failed.");
+  const dates = spawnSync(process.execPath, [fileURLToPath(new URL("./sync-qualification-dates.js", import.meta.url))], { stdio: "inherit" });
+  if (dates.status !== 0) throw new Error("Qualification date synchronization failed.");
 }
 
 function check() {

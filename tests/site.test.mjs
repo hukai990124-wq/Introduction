@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { JSDOM } from "jsdom";
 import { isMessageKey } from "../src/js/language.js";
+import { qualificationMonths, qualificationMonth } from "../src/js/qualification-dates.js";
 
 let pageNumber = 0;
 
@@ -54,6 +55,87 @@ test("the home page switches among all three languages and carries the selection
   assert.equal(document.documentElement.lang, "ja");
   assert.equal(document.querySelector('[data-i18n="home.about"]').textContent, "私について");
   window.close();
+});
+
+const fullDate = /\b\d{4}[-/]\d{1,2}[-/]\d{1,2}\b|\d{4}\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日|\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4}\b/i;
+const yearMonth = /\b\d{4}-(?:0[1-9]|1[0-2])\b|\d{4}\s*年\s*\d{1,2}\s*月|\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}\b/i;
+
+function assertQualificationMonths(document) {
+  const dates = document.querySelectorAll('.qualifications-list li > span[data-i18n], .certificate-record time');
+  assert.ok(dates.length > 0, "qualification dates must be present");
+  for (const date of dates) {
+    assert.doesNotMatch(date.textContent, fullDate, date.outerHTML);
+    assert.match(date.textContent, yearMonth, date.outerHTML);
+    assert.ok(date.hasAttribute('data-qualification-date') || date.hasAttribute('data-qualification-dates'), "every qualification date must use a shared date tag");
+  }
+  for (const time of document.querySelectorAll('.certificate-record time')) {
+    assert.match(time.dateTime, /^\d{4}-(?:0[1-9]|1[0-2])$/, time.outerHTML);
+    assert.equal(time.dateTime, qualificationMonth(time.dataset.qualificationDate));
+  }
+  for (const record of document.querySelectorAll('.qualification-panel, .certificate-record')) {
+    assert.doesNotMatch(record.textContent, fullDate, "certificate text must omit the day");
+    assert.doesNotMatch(record.textContent, /\{date:[^}]+\}/, "date placeholders must be resolved");
+    for (const description of record.querySelectorAll('.certificate-details p')) {
+      if (yearMonth.test(description.textContent)) assert.ok(description.hasAttribute('data-qualification-dates'), "certificate date descriptions must use a shared date tag");
+    }
+    for (const image of record.querySelectorAll('img')) {
+      assert.doesNotMatch(image.alt, fullDate, "certificate image descriptions must omit the day");
+      assert.doesNotMatch(image.alt, /\{date:[^}]+\}/);
+      if (yearMonth.test(image.alt)) assert.ok(image.hasAttribute('data-qualification-dates'), "certificate image dates must use a shared date tag");
+    }
+  }
+}
+
+test("qualification dates show only year and month before JavaScript loads", async () => {
+  for (const filename of ["myCV.html", "certificates.html"]) {
+    const html = await readFile(new URL(`../src/html/${filename}`, import.meta.url), "utf8");
+    const { window } = new JSDOM(html);
+    try { assertQualificationMonths(window.document); }
+    finally { window.close(); }
+  }
+});
+
+test("qualification dates stay month-only across all three languages and the certificate viewer", async () => {
+  for (const filename of ["myCV.html", "certificates.html"]) {
+    const window = await openPage(filename);
+    const document = window.document;
+    try {
+      for (const language of ["en", "zh", "ja", "en"]) {
+        document.querySelector(`[data-language="${language}"]`).click();
+        assertQualificationMonths(document);
+        for (const record of document.querySelectorAll('.certificate-record')) {
+          record.querySelector('.certificate-open').click();
+          const dialog = document.querySelector('.certificate-dialog');
+          assert.equal(dialog.open, true);
+          assert.doesNotMatch(dialog.querySelector('.viewer-image').alt, fullDate);
+          dialog.querySelector('.viewer-close').click();
+        }
+      }
+    } finally { window.close(); }
+  }
+});
+
+test("every certificate date comes from shared data in the CV, descriptions and gallery", async () => {
+  const original = { ...qualificationMonths };
+  for (const key of Object.keys(qualificationMonths)) qualificationMonths[key] = '2031-02';
+  try {
+    for (const filename of ["myCV.html", "certificates.html"]) {
+      const window = await openPage(filename);
+      try {
+        for (const [language, expected] of [['en', 'February 2031'], ['zh', '2031年2月'], ['ja', '2031年2月']]) {
+          window.document.querySelector(`[data-language="${language}"]`).click();
+          const dates = window.document.querySelectorAll('[data-qualification-date], [data-qualification-dates]');
+          assert.ok(dates.length > 0);
+          for (const date of dates) {
+            const text = date.tagName === 'IMG' ? date.alt : date.textContent;
+            const months = text.match(new RegExp(yearMonth.source, 'gi'));
+            assert.ok(months?.length > 0, `${filename} (${language}): ${text}`);
+            assert.ok(months.every(month => month === expected), `${filename} (${language}): ${text}`);
+          }
+        }
+      } finally { window.close(); }
+    }
+  } finally { Object.assign(qualificationMonths, original); }
 });
 
 test("certificates can be filtered, viewed, navigated, and translated", async () => {
