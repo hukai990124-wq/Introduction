@@ -588,7 +588,7 @@ const messages: Record<Language, Record<MessageKey, string>> = {
         "art.title": "胡凱 - アート作品展示",
         "art.heading": "アート作品展示",
         "art.kicker": "アート作品 / 009",
-        "art.intro": "Blenderで制作した作品の実機デモンストレーションです。",
+        "art.intro": "Blenderで制作した作品を、ゲーム内での表示例とともに紹介しています。",
         "art.explore": "作品展示を見る",
         "art.open": "元の画像を見る ↗",
         "art.contents": "展示目次",
